@@ -1,11 +1,11 @@
+/* =============================================
+   GOOGLE FONTS IMPORT (must be first)
+   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Open+Sans:wght@400;500;600&family=Lato:wght@300;400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* =============================================
-   GOOGLE FONTS IMPORT
-   ============================================= */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Open+Sans:wght@400;500;600&family=Lato:wght@300;400;700&display=swap');
 
 /* =============================================
    CSS CUSTOM PROPERTIES (DESIGN TOKENS)

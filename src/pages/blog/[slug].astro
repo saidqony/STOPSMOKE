@@ -2,6 +2,26 @@
 import BaseLayout from '../../components/layout/BaseLayout.astro';
 import { WA_LINK } from '../../utils/whatsapp';
 
+const slugs = [
+  'tips-berhenti-merokok-tanpa-tersiksa',
+  'dampak-merokok-pada-paru-paru',
+  'cerita-sukses-pak-budi',
+  'kandungan-rokok-yang-berbahaya',
+  'nikotin-dan-ketergantungan',
+  'olahraga-bantu-berhenti-merokok',
+];
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'tips-berhenti-merokok-tanpa-tersiksa' } },
+    { params: { slug: 'dampak-merokok-pada-paru-paru' } },
+    { params: { slug: 'cerita-sukses-pak-budi' } },
+    { params: { slug: 'kandungan-rokok-yang-berbahaya' } },
+    { params: { slug: 'nikotin-dan-ketergantungan' } },
+    { params: { slug: 'olahraga-bantu-berhenti-merokok' } },
+  ];
+}
+
 const articles: Record<string, any> = {
   'tips-berhenti-merokok-tanpa-tersiksa': {
     category: 'Tips',

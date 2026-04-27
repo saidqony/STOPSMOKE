@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+
+const categories = ['Semua', 'Tips', 'Edukasi', 'Cerita Sukses', 'Penelitian'];
+
+const articles = [
+  {
+    slug: 'tips-berhenti-merokok-tanpa-tersiksa',
+    category: 'Tips',
+    title: '5 Tips Berhenti Merokok Tanpa Tersiksa yang Terbukti Efektif',
+    excerpt: 'Berhenti merokok tidak harus menyakitkan. Dengan strategi yang tepat dan dukungan medis, banyak orang berhasil berhenti tanpa penderitaan berlebihan.',
+    readTime: 5,
+    date: '20 April 2026',
+    icon: '💡',
+    gradient: 'from-recovery-green/20 to-medical-trust/10',
+    featured: true,
+  },
+  {
+    slug: 'dampak-merokok-pada-paru-paru',
+    category: 'Edukasi',
+    title: 'Apa yang Terjadi pada Paru-paru Setelah Anda Berhenti Merokok?',
+    excerpt: 'Dalam 20 menit pertama berhenti merokok, tubuh Anda sudah mulai pulih. Pelajari perjalanan luar biasa pemulihan paru-paru dari perspektif medis.',
+    readTime: 7,
+    date: '15 April 2026',
+    icon: '🫁',
+    gradient: 'from-medical-trust/20 to-recovery-green/5',
+    featured: false,
+  },
+  {
+    slug: 'cerita-sukses-pak-budi',
+    category: 'Cerita Sukses',
+    title: 'Dari 2 Bungkus Per Hari ke Bebas Total: Kisah Pak Budi',
+    excerpt: 'Pak Budi merokok 2 bungkus sehari selama 30 tahun. Dengan program berhenti merokok bersama tim dokter kami, ia kini sudah 6 bulan bebas rokok.',
+    readTime: 4,
+    date: '10 April 2026',
+    icon: '🏆',
+    gradient: 'from-yellow-100 to-orange-50',
+    featured: false,
+  },
+  {
+    slug: 'kandungan-rokok-yang-berbahaya',
+    category: 'Edukasi',
+    title: '4.000 Zat Kimia dalam Rokok: Mana yang Paling Berbahaya?',
+    excerpt: 'Rokok mengandung lebih dari 4.000 senyawa kimia berbahaya. Artikel ini membahas 10 zat paling merusak kesehatan berdasarkan penelitian terkini.',
+    readTime: 8,
+    date: '5 April 2026',
+    icon: '🧪',
+    gradient: 'from-red-100 to-pink-50',
+    featured: false,
+  },
+  {
+    slug: 'nikotin-dan-ketergantungan',
+    category: 'Penelitian',
+    title: 'Bagaimana Nikotin Menciptakan Ketergantungan di Otak Anda?',
+    excerpt: 'Penelitian neurosains terbaru mengungkap mekanisme nikotin dalam memanipulasi sistem reward otak dan menciptakan siklus ketergantungan yang sulit diputus.',
+    readTime: 10,
+    date: '1 April 2026',
+    icon: '🧠',
+    gradient: 'from-purple-100 to-blue-50',
+    featured: false,
+  },
+  {
+    slug: 'olahraga-bantu-berhenti-merokok',
+    category: 'Tips',
+    title: 'Olahraga sebagai Senjata Rahasia Berhenti Merokok',
+    excerpt: 'Studi menunjukkan bahwa olahraga teratur dapat mengurangi keinginan merokok hingga 50%. Pelajari jenis olahraga terbaik dan cara memulainya.',
+    readTime: 6,
+    date: '28 Maret 2026',
+    icon: '🏃',
+    gradient: 'from-green-100 to-teal-50',
+    featured: false,
+  },
+];
+
+const featured = articles.find(a => a.featured);
+const rest = articles.filter(a => !a.featured);
+
+const categoryColors: Record<string, string> = {
+  'Tips': 'bg-recovery-green/10 text-recovery-green-dark',
+  'Edukasi': 'bg-medical-trust/10 text-medical-trust',
+  'Cerita Sukses': 'bg-yellow-100 text-yellow-700',
+  'Penelitian': 'bg-purple-100 text-purple-700',
+};
+---
+
+<BaseLayout
+  title="Blog Kesehatan"
+  description="Artikel edukasi, tips, dan cerita sukses berhenti merokok dari dokter ahli. Wawasan berbasis bukti medis untuk mendukung perjalanan Anda."
+>
+  <!-- Hero -->
+  <section class="section-pad-sm bg-clean-cloud border-b border-clean-cloud-dark">
+    <div class="container-main text-center">
+      <span class="section-label reveal">Blog Kesehatan</span>
+      <h1 class="font-lora font-semibold text-medical-trust leading-tight mb-4 reveal"
+          style="font-size: clamp(28px, 4vw, 44px);" data-delay="100">
+        Wawasan untuk Perjalanan Sehat Anda
+      </h1>
+      <p class="font-opensans text-text-muted text-lead max-w-xl mx-auto reveal" data-delay="200">
+        Artikel edukasi, tips praktis, dan cerita inspiratif dari tim dokter dan pasien yang berhasil.
+      </p>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <section class="bg-white border-b border-clean-cloud-dark py-4 sticky top-[64px] md:top-[80px] z-40">
+    <div class="container-main">
+      <div class="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
+        {categories.map(cat => (
+          <button
+            class={`category-filter-btn shrink-0 font-nunito font-semibold text-sm px-4 py-2 rounded-full transition-all duration-200
+              ${cat === 'Semua' ? 'bg-medical-trust text-white' : 'bg-clean-cloud text-medical-trust hover:bg-medical-trust/10'}`}
+            data-category={cat}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Article -->
+  {featured && (
+    <section class="section-pad-sm bg-clean-cloud">
+      <div class="container-main">
+        <span class="section-label reveal">Artikel Pilihan</span>
+        <a href={`/blog/${featured.slug}`}
+           class="block card-base overflow-hidden mt-4 group reveal"
+           data-delay="100"
+           data-category-article={featured.category}>
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <!-- Thumbnail -->
+            <div class={`h-64 md:h-auto bg-gradient-to-br ${featured.gradient} flex items-center justify-center
+                          group-hover:scale-105 transition-transform duration-500 overflow-hidden`}>
+              <span class="text-8xl">{featured.icon}</span>
+            </div>
+            <!-- Content -->
+            <div class="p-8 lg:p-10 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-4">
+                <span class={`badge-pill ${categoryColors[featured.category] || 'bg-gray-100 text-gray-700'}`}>{featured.category}</span>
+                <span class="font-opensans text-text-light text-xs">{featured.readTime} menit baca</span>
+              </div>
+              <h2 class="font-lora font-semibold text-medical-trust text-2xl lg:text-3xl leading-snug mb-4
+                          group-hover:text-recovery-green transition-colors">
+                {featured.title}
+              </h2>
+              <p class="font-opensans text-text-muted text-body leading-relaxed mb-6">{featured.excerpt}</p>
+              <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 font-opensans font-semibold text-recovery-green text-caption">
+                  Baca Selengkapnya
+                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+                <span class="font-opensans text-text-light text-xs">{featured.date}</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- Article Grid -->
+  <section class="section-pad bg-white">
+    <div class="container-main">
+      <h2 class="font-nunito font-bold text-medical-trust text-2xl mb-8 reveal">Semua Artikel</h2>
+      <div id="article-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {rest.map((art, i) => (
+          <article
+            class={`card-base overflow-hidden group reveal`}
+            data-delay={String((i % 3) * 120)}
+            data-category-article={art.category}
+          >
+            <a href={`/blog/${art.slug}`} class="block overflow-hidden" aria-label={art.title}>
+              <div class={`h-48 bg-gradient-to-br ${art.gradient} flex items-center justify-center
+                           group-hover:scale-[1.03] transition-transform duration-500 relative`}>
+                <span class="text-6xl">{art.icon}</span>
+                <div class="absolute top-4 left-4">
+                  <span class={`badge-pill ${categoryColors[art.category] || 'bg-gray-100 text-gray-700'}`}>{art.category}</span>
+                </div>
+              </div>
+            </a>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3 text-xs text-text-light font-opensans">
+                <span>{art.date}</span>
+                <span>•</span>
+                <span>{art.readTime} menit baca</span>
+              </div>
+              <h3 class="font-nunito font-bold text-medical-trust text-lg leading-snug mb-3 line-clamp-2
+                          group-hover:text-recovery-green transition-colors">
+                <a href={`/blog/${art.slug}`}>{art.title}</a>
+              </h3>
+              <p class="font-opensans text-text-muted text-sm leading-relaxed line-clamp-3 mb-4">{art.excerpt}</p>
+              <a href={`/blog/${art.slug}`}
+                 class="inline-flex items-center gap-1.5 font-opensans font-semibold text-recovery-green text-caption
+                        hover:gap-2.5 transition-all duration-200">
+                Baca Selengkapnya
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const filterBtns = document.querySelectorAll('.category-filter-btn') as NodeListOf<HTMLButtonElement>;
+  const articles = document.querySelectorAll('[data-category-article]') as NodeListOf<HTMLElement>;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.category;
+
+      // Update active button
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-medical-trust', 'text-white');
+        b.classList.add('bg-clean-cloud', 'text-medical-trust');
+      });
+      btn.classList.add('bg-medical-trust', 'text-white');
+      btn.classList.remove('bg-clean-cloud', 'text-medical-trust');
+
+      // Filter articles
+      articles.forEach(art => {
+        const artCat = art.dataset.categoryArticle;
+        if (cat === 'Semua' || artCat === cat) {
+          art.style.display = '';
+        } else {
+          art.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

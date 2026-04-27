@@ -1,0 +1,109 @@
+---
+import '../../styles/global.css';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import WhatsAppFloat from './WhatsAppFloat.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description = 'Konsultasi gratis dengan dokter ahli untuk berhenti merokok. Dua kali pertemuan langsung gratis. Mulai perjalanan hidup sehat Anda hari ini.',
+  image = '/og-image.jpg',
+  canonicalUrl,
+} = Astro.props;
+
+const siteUrl = 'https://berhenti-merokok.id';
+const fullTitle = `${title} | Berhenti Merokok - Konsultasi Dokter Ahli`;
+const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "Klinik Berhenti Merokok",
+  "description": "Layanan konsultasi kesehatan berhenti merokok dengan dokter ahli",
+  "url": siteUrl,
+  "telephone": "+62-857-2773-969",
+  "address": { "@type": "PostalAddress", "addressCountry": "ID" },
+  "medicalSpecialty": "Pulmonology",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127"
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="Indonesian" />
+  <meta name="author" content="Klinik Berhenti Merokok" />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}${image}`} />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonical} />
+  <meta property="twitter:title" content={fullTitle} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={`${siteUrl}${image}`} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="https://wa.me" />
+  <link rel="dns-prefetch" href="https://formspree.io" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+</head>
+<body class="bg-clean-cloud text-text-body font-opensans antialiased">
+  <Header />
+  <main id="main-content">
+    <slot />
+  </main>
+  <Footer />
+  <WhatsAppFloat />
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const delay = parseInt(el.dataset.delay || '0');
+          setTimeout(() => {
+            el.classList.add('is-visible');
+          }, delay);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

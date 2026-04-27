@@ -1,0 +1,280 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import { WA_LINK } from '../utils/whatsapp';
+
+const services = [
+  {
+    icon: '💬',
+    number: '01',
+    title: 'Konsultasi Online Gratis',
+    desc: 'Tanyakan apa saja tentang kebiasaan merokok Anda melalui chat atau video call langsung dengan dokter ahli kami. Tidak perlu daftar akun, tidak perlu membayar.',
+    features: [
+      'Respon dalam 24 jam kerja',
+      'Chat teks atau video call',
+      'Tidak perlu daftar akun',
+      '100% gratis tanpa syarat',
+      'Privat & rahasia',
+    ],
+    cta: 'Mulai Chat Gratis',
+    href: WA_LINK,
+    external: true,
+    color: 'bg-medical-trust/5 border-medical-trust/15',
+    iconBg: 'bg-medical-trust',
+    badge: 'GRATIS',
+    badgeColor: 'bg-recovery-green text-white',
+  },
+  {
+    icon: '🏥',
+    number: '02',
+    title: '2x Pertemuan Langsung Gratis',
+    desc: 'Bertemu langsung dengan dokter ahli di klinik untuk evaluasi kesehatan mendalam dan pembuatan rencana berhenti merokok yang dipersonalisasi.',
+    features: [
+      '2 sesi gratis penuh (tidak ada biaya)',
+      'Durasi 45 menit per sesi',
+      'Pemeriksaan dasar paru disertakan',
+      'Rencana personal berhenti merokok',
+      'Jadwal fleksibel Senin–Sabtu',
+    ],
+    cta: 'Jadwalkan Sekarang',
+    href: WA_LINK,
+    external: true,
+    color: 'bg-recovery-green/5 border-recovery-green/15',
+    iconBg: 'bg-recovery-green',
+    badge: '2x GRATIS',
+    badgeColor: 'bg-medical-trust text-white',
+  },
+  {
+    icon: '🔄',
+    number: '03',
+    title: 'Program Pendampingan Berkelanjutan',
+    desc: 'Dukungan jangka panjang untuk mencegah kambuh dan memantau perkembangan kesehatan Anda pasca berhenti merokok. Komunitas yang saling mendukung.',
+    features: [
+      'Sesi follow-up berkala',
+      'Akses grup support komunitas',
+      'Monitoring kesehatan paru',
+      'Konseling psikologis kapan dibutuhkan',
+      'Laporan perkembangan bulanan',
+    ],
+    cta: 'Pelajari Program',
+    href: '/harga',
+    external: false,
+    color: 'bg-yellow-50 border-yellow-200',
+    iconBg: 'bg-yellow-500',
+    badge: 'PREMIUM',
+    badgeColor: 'bg-yellow-500 text-white',
+  },
+];
+
+const timeline = [
+  { step: '01', title: 'Konsultasi Online', desc: 'Chat gratis dengan dokter untuk assessment awal kebiasaan merokok Anda.', icon: '💬' },
+  { step: '02', title: 'Pertemuan Langsung', desc: 'Bertemu dokter di klinik untuk evaluasi mendalam dan rencana personal.', icon: '🏥' },
+  { step: '03', title: 'Rencana Personal', desc: 'Dokter membuat program berhenti merokok khusus sesuai kondisi Anda.', icon: '📋' },
+  { step: '04', title: 'Pantau & Dukung', desc: 'Follow-up berkala dan grup support untuk mencegah kambuh.', icon: '✅' },
+];
+
+const faqs = [
+  {
+    q: 'Apakah layanan konsultasi benar-benar gratis?',
+    a: 'Ya, 100% gratis tanpa syarat apapun. Konsultasi online via WhatsApp dan 2x pertemuan langsung pertama tidak dipungut biaya sama sekali. Tidak ada biaya tersembunyi.',
+  },
+  {
+    q: 'Bagaimana cara memulai konsultasi online?',
+    a: 'Klik tombol "Tanya Dokter Gratis" di halaman mana saja. Anda akan langsung terhubung ke WhatsApp kami dengan pesan awal yang sudah disiapkan. Tim dokter akan merespon dalam 24 jam.',
+  },
+  {
+    q: 'Apa saja yang diperiksa saat pertemuan langsung?',
+    a: 'Saat pertemuan langsung, dokter akan melakukan pemeriksaan paru dasar (spirometri sederhana), riwayat merokok, kondisi kesehatan umum, dan membuat rencana berhenti merokok yang dipersonalisasi.',
+  },
+  {
+    q: 'Apakah ada jaminan bisa berhenti merokok?',
+    a: 'Kami tidak memberikan janji instan. Keberhasilan berhenti merokok membutuhkan komitmen Anda. Namun dengan pendekatan medis yang tepat dan dukungan berkelanjutan, tingkat keberhasilan pasien kami sangat tinggi.',
+  },
+  {
+    q: 'Berapa lama program berhenti merokok berlangsung?',
+    a: 'Program dasar berlangsung 8-12 minggu. Namun setiap orang berbeda — ada yang berhasil lebih cepat, ada yang membutuhkan waktu lebih lama. Tim kami akan mendampingi selama dibutuhkan.',
+  },
+  {
+    q: 'Bagaimana jika saya kambuh merokok?',
+    a: 'Kambuh adalah bagian normal dari proses berhenti merokok. Jangan putus asa! Tim kami akan membantu Anda menganalisis penyebab kambuh dan menyesuaikan strategi. Kegagalan sementara bukan berarti gagal total.',
+  },
+];
+---
+
+<BaseLayout
+  title="Layanan"
+  description="3 layanan berhenti merokok: Konsultasi Online Gratis, 2x Pertemuan Langsung Gratis, dan Program Pendampingan Berkelanjutan. Didampingi dokter spesialis paru."
+>
+  <!-- Hero -->
+  <section class="section-pad-sm bg-clean-cloud border-b border-clean-cloud-dark relative overflow-hidden">
+    <div class="absolute right-0 top-0 w-80 h-full opacity-5 pointer-events-none" aria-hidden="true">
+      <svg viewBox="0 0 200 300" fill="#1E3A8A" class="w-full h-full">
+        <path d="M100 20 Q130 50 120 90 Q150 100 140 130 Q170 140 160 170 Q140 200 100 210 Q60 200 40 170 Q30 140 60 130 Q50 100 80 90 Q70 50 100 20Z"/>
+      </svg>
+    </div>
+    <div class="container-main relative text-center">
+      <span class="section-label reveal">Layanan Kami</span>
+      <h1 class="font-lora font-semibold text-medical-trust leading-tight mb-4 reveal"
+          style="font-size: clamp(28px, 4vw, 44px);" data-delay="100">
+        Program Berhenti Merokok Berbasis Bukti Medis
+      </h1>
+      <p class="font-opensans text-text-muted text-lead max-w-xl mx-auto reveal" data-delay="200">
+        Konsultasi gratis dan pendampingan oleh dokter ahli untuk membantu Anda berhenti merokok secara permanen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service Cards -->
+  <section class="section-pad bg-white">
+    <div class="container-main space-y-8">
+      {services.map((s, i) => (
+        <div class={`border-2 ${s.color} rounded-3xl p-8 lg:p-10 reveal`} data-delay={String(i * 150)}>
+          <div class="flex flex-col lg:flex-row lg:items-start gap-8">
+            <!-- Icon & badge -->
+            <div class="shrink-0">
+              <div class="relative inline-block">
+                <div class={`w-20 h-20 rounded-2xl ${s.iconBg} flex items-center justify-center text-4xl shadow-md`}>
+                  {s.icon}
+                </div>
+                <span class={`absolute -top-2 -right-3 ${s.badgeColor} font-nunito font-bold text-xs px-2.5 py-1 rounded-full`}>
+                  {s.badge}
+                </span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1">
+              <h2 class="font-nunito font-bold text-medical-trust text-2xl lg:text-3xl mb-3 leading-tight">
+                {s.title}
+              </h2>
+              <p class="font-opensans text-text-muted text-body leading-relaxed mb-6">{s.desc}</p>
+
+              <!-- Features -->
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6" role="list">
+                {s.features.map(f => (
+                  <li class="flex items-start gap-2.5">
+                    <svg class="w-5 h-5 text-recovery-green mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="font-opensans text-text-muted text-sm leading-relaxed">{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <!-- CTA -->
+              {s.external ? (
+                <a href={s.href} target="_blank" rel="noopener noreferrer" class="btn-primary">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.549 4.103 1.508 5.831L.057 23.48a.496.496 0 00.6.6l5.748-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.813 9.813 0 01-5.001-1.374l-.359-.213-3.717.975.992-3.617-.234-.371A9.816 9.816 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+                  {s.cta}
+                </a>
+              ) : (
+                <a href={s.href} class="btn-secondary">{s.cta} →</a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section-pad bg-clean-cloud">
+    <div class="container-main">
+      <div class="text-center mb-12">
+        <span class="section-label reveal">Alur Program</span>
+        <h2 class="section-title text-h2 reveal" data-delay="100">Alur Program Berhenti Merokok</h2>
+        <p class="section-subtitle text-lead max-w-lg mx-auto reveal" data-delay="200">
+          4 langkah sederhana menuju hidup bebas rokok
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative">
+        <!-- Connector line (desktop only) -->
+        <div class="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-clean-cloud-dark z-0" aria-hidden="true"></div>
+
+        {timeline.map((t, i) => (
+          <div class={`relative text-center reveal`} data-delay={String(i * 150)}>
+            <!-- Node -->
+            <div class="w-16 h-16 rounded-full bg-medical-trust text-white font-nunito font-bold text-xl
+                         flex items-center justify-center mx-auto mb-4 shadow-md z-10 relative">
+              {t.step}
+            </div>
+            <!-- Card -->
+            <div class="card-base p-6">
+              <div class="text-3xl mb-3">{t.icon}</div>
+              <h3 class="font-nunito font-bold text-medical-trust text-lg mb-2">{t.title}</h3>
+              <p class="font-opensans text-text-muted text-sm leading-relaxed">{t.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad bg-white">
+    <div class="container-main">
+      <div class="text-center mb-12">
+        <h2 class="section-title text-h2 mb-3 reveal">Pertanyaan yang Sering Diajukan</h2>
+        <p class="section-subtitle text-lead max-w-lg mx-auto reveal" data-delay="100">
+          Temukan jawaban atas pertanyaan umum seputar layanan kami.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-3" id="faq-list">
+        {faqs.map((faq, i) => (
+          <div class="faq-item border border-clean-cloud-dark rounded-2xl overflow-hidden reveal" data-delay={String(i * 80)}>
+            <button
+              class="faq-trigger w-full flex items-center justify-between gap-4 p-6 text-left
+                     hover:bg-clean-cloud transition-colors"
+              aria-expanded="false"
+              id={`faq-${i}`}
+            >
+              <span class="font-nunito font-semibold text-medical-trust text-base leading-snug">{faq.q}</span>
+              <span class="faq-icon w-8 h-8 rounded-full bg-clean-cloud flex items-center justify-center shrink-0 transition-all duration-300">
+                <svg class="w-4 h-4 text-medical-trust" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer hidden px-6 pb-6">
+              <p class="font-opensans text-text-muted text-body leading-relaxed">{faq.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.faq-item') as HTMLElement;
+      const answer = item.querySelector('.faq-answer') as HTMLElement;
+      const icon = item.querySelector('.faq-icon') as HTMLElement;
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        const a = i.querySelector('.faq-answer') as HTMLElement;
+        const ic = i.querySelector('.faq-icon') as HTMLElement;
+        const t = i.querySelector('.faq-trigger') as HTMLElement;
+        a?.classList.add('hidden');
+        ic?.classList.remove('bg-recovery-green', 'rotate-45');
+        ic?.classList.add('bg-clean-cloud');
+        t?.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle current
+      if (!isOpen) {
+        answer?.classList.remove('hidden');
+        icon?.classList.add('bg-recovery-green', 'rotate-45');
+        icon?.classList.remove('bg-clean-cloud');
+        trigger.setAttribute('aria-expanded', 'true');
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'faq_expand', { event_label: trigger.textContent?.trim().slice(0, 50) });
+        }
+      }
+    });
+  });
+</script>

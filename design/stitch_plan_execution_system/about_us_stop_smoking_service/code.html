@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .whatsapp-pulse {
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#1a1b21",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#faf8ff",
+                      "inverse-on-surface": "#f1f0f7",
+                      "surface-bright": "#faf8ff",
+                      "recovery-green-light": "#34D399",
+                      "surface-variant": "#e3e1e9",
+                      "tertiary-fixed": "#ffdbcb",
+                      "on-tertiary-fixed": "#341100",
+                      "outline": "#757682",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-highest": "#e3e1e9",
+                      "surface-container": "#eeedf4",
+                      "primary": "#00236f",
+                      "secondary-fixed-dim": "#4edea3",
+                      "primary-container": "#1e3a8a",
+                      "clean-cloud-dark": "#E2E8F0",
+                      "tertiary": "#4b1c00",
+                      "clean-cloud": "#F8FAFC",
+                      "secondary": "#006c49",
+                      "on-surface-variant": "#444651",
+                      "on-secondary": "#ffffff",
+                      "on-surface": "#1a1b21",
+                      "tertiary-fixed-dim": "#ffb691",
+                      "on-secondary-fixed": "#002113",
+                      "on-secondary-container": "#00714d",
+                      "surface-tint": "#4059aa",
+                      "outline-variant": "#c5c5d3",
+                      "surface-container-high": "#e9e7ef",
+                      "inverse-surface": "#2f3036",
+                      "inverse-primary": "#b6c4ff",
+                      "surface-dim": "#dad9e1",
+                      "on-error": "#ffffff",
+                      "surface": "#faf8ff",
+                      "on-tertiary-container": "#f39461",
+                      "surface-card": "#FFFFFF",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-tertiary-fixed-variant": "#773205",
+                      "on-primary-fixed": "#00164e",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#6cf8bb",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f4f3fa",
+                      "medical-trust-light": "#3B82F6",
+                      "text-primary": "#1E3A8A",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-error-container": "#93000a",
+                      "medical-trust-dark": "#0F172A",
+                      "text-body": "#334155",
+                      "text-muted": "#64748B",
+                      "primary-fixed": "#dce1ff",
+                      "on-primary-container": "#90a8ff",
+                      "recovery-green-dark": "#059669",
+                      "tertiary-container": "#6e2c00",
+                      "on-primary-fixed-variant": "#264191"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "2xl": "48px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "4xl": "80px",
+                      "sm": "8px",
+                      "3xl": "64px",
+                      "5xl": "100px",
+                      "container-max": "1200px"
+              },
+              "fontFamily": {
+                      "h3-card": ["Plus Jakarta Sans", "sans-serif"],
+                      "body-standard": ["Noto Serif", "serif"],
+                      "h2-section": ["Plus Jakarta Sans", "sans-serif"],
+                      "h1-hero": ["Plus Jakarta Sans", "sans-serif"],
+                      "label-ui": ["Plus Jakarta Sans", "sans-serif"],
+                      "quote": ["Newsreader", "serif"],
+                      "h1-medical": ["Newsreader", "serif"],
+                      "body-lead": ["Noto Serif", "serif"]
+              },
+              "fontSize": {
+                      "h3-card": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-standard": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                      "h2-section": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "h1-hero": ["52px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-ui": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "quote": ["22px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "h1-medical": ["48px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-lead": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-standard selection:bg-recovery-green-light selection:text-white">
+<!-- Header / TopAppBar -->
+<header class="bg-slate-50/80 backdrop-blur-md sticky top-0 w-full z-50 border-b border-slate-200 shadow-sm">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+<div class="text-2xl font-serif font-bold text-blue-900">StopSmoking MD</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-ui text-label-ui text-slate-600 hover:text-emerald-500 transition-all duration-300" href="#">Programs</a>
+<a class="font-label-ui text-label-ui text-emerald-600 border-b-2 border-emerald-500 pb-1" href="#">Specialists</a>
+<a class="font-label-ui text-label-ui text-slate-600 hover:text-emerald-500 transition-all duration-300" href="#">Success Stories</a>
+<a class="font-label-ui text-label-ui text-slate-600 hover:text-emerald-500 transition-all duration-300" href="#">Clinics</a>
+</nav>
+<button class="bg-recovery-green-dark text-on-primary font-label-ui text-label-ui px-6 py-3 rounded-xl shadow-lg hover:shadow-emerald-200 transition-all duration-300 scale-95 active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                WhatsApp Consultation
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="py-5xl relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-xl items-center">
+<div class="z-10">
+<span class="text-recovery-green-dark font-label-ui text-label-ui tracking-widest uppercase mb-4 block">Our Legacy of Care</span>
+<h1 class="font-h1-medical text-h1-medical text-primary mb-6">Kredibilitas di Balik Layanan Kami</h1>
+<p class="font-body-lead text-body-lead text-text-body mb-8 max-w-xl">
+                        Dedikasi kami melampaui sekadar pengobatan medis. Kami membangun fondasi kepercayaan melalui transparansi klinis dan dukungan emosional yang berkelanjutan untuk setiap perjalanan pemulihan.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary font-label-ui text-label-ui px-8 py-4 rounded-xl shadow-md hover:bg-primary-container transition-all">Lihat Akreditasi</button>
+</div>
+</div>
+<div class="relative">
+<div class="rounded-2xl overflow-hidden shadow-2xl">
+<img class="w-full h-[500px] object-cover" data-alt="Professional medical team in a clean modern clinic setting with soft clinical lighting and warm wooden accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANyvqYXNoBzPhlziYamsgKApQVUN3HM94aMMEdl9Sj36gZdAsUJH_Jb5utPNjM6hbjoMmfpRkxNrPZelFYAhegnUWJPZXMBNSrdYVxofiSr00beOnIu_5U8sY0vS7jEEmTCZ8EIkrPgCAxE4SDLKgbomNdkgmIrdCPrkroAXKXz5J1H3NZX_ZeAm_86xYmJKkQEZJtdcgy8no6OpurQAUcH6FBbifAjOHRSzJe1AoieCVKoU5D7uBqHjkjEP8piwv7G_gPMHwM8vs"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl flex items-center gap-4">
+<div class="bg-recovery-green-light/20 p-3 rounded-full">
+<span class="material-symbols-outlined text-recovery-green-dark">verified_user</span>
+</div>
+<div>
+<p class="font-h3-card text-h3-card text-primary leading-none">15+</p>
+<p class="text-sm font-label-ui text-text-muted uppercase">Tahun Pengalaman</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision & Mission -->
+<section class="py-5xl bg-clean-cloud">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid md:grid-cols-2 gap-lg">
+<!-- Vision -->
+<div class="bg-white p-xl rounded-xl border border-clean-cloud-dark shadow-sm hover:-translate-y-2 transition-transform duration-300">
+<div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-medical-trust-light text-3xl">visibility</span>
+</div>
+<h2 class="font-h2-section text-h2-section text-primary mb-4">Visi Kami</h2>
+<p class="font-body-standard text-body-standard text-text-body">
+                            Menjadi pusat keunggulan rehabilitasi pernapasan terkemuka yang mengintegrasikan inovasi medis terkini dengan pendekatan personal untuk menciptakan masyarakat yang bebas dari ketergantungan tembakau.
+                        </p>
+</div>
+<!-- Mission -->
+<div class="bg-white p-xl rounded-xl border border-clean-cloud-dark shadow-sm hover:-translate-y-2 transition-transform duration-300">
+<div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-recovery-green-dark text-3xl">target</span>
+</div>
+<h2 class="font-h2-section text-h2-section text-primary mb-4">Misi Kami</h2>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-recovery-green-dark">check_circle</span>
+<span class="font-body-standard text-body-standard text-text-body">Memberikan perawatan klinis berbasis bukti yang aman dan efektif.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-recovery-green-dark">check_circle</span>
+<span class="font-body-standard text-body-standard text-text-body">Mengedukasi masyarakat tentang bahaya merokok melalui program berkelanjutan.</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-recovery-green-dark">check_circle</span>
+<span class="font-body-standard text-body-standard text-text-body">Menyediakan platform dukungan 24/7 bagi pasien dalam masa transisi.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Doctors Team -->
+<section class="py-5xl">
+<div class="max-w-7xl mx-auto px-8 text-center mb-16">
+<h2 class="font-h2-section text-h2-section text-primary mb-4">Tim Dokter Berpengalaman</h2>
+<p class="font-body-lead text-body-lead text-text-muted max-w-2xl mx-auto">Dipandu oleh spesialis paru dan ahli perilaku bersertifikasi untuk memastikan setiap pasien mendapatkan perawatan terbaik.</p>
+</div>
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-lg">
+<!-- Dr Andi -->
+<div class="group">
+<div class="rounded-2xl overflow-hidden mb-6 relative">
+<img class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Dr. Andi, a professional male doctor in a white lab coat with a warm and welcoming smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGtmkY5bi8V0fg7BcmHKRs0CJBGl9NzmwRUVWwCQ_FrnaqCZQS_n3-jSnQxGdEL7ElENDp2RgSAiWKcdWNO6eVa1c0nomHGtp-CfaWdgp5fCqaT_yacS_U8f9-O1vJtMzmfqKFA3ZiPvv0pNdwnjhp4AqD4zwObrbqG7ex0d9KGManCv0u2nM_ucCIUhB_Mfq4ATm8YKWdHeydDFVq5ed338KLBcyFRqgewZ0_0ZY0MeZHhY1CArIREBr76MLvtYkFwlxwy-NaxIA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="flex gap-3">
+<a class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/40" href="#"><span class="material-symbols-outlined text-sm">link</span></a>
+</div>
+</div>
+</div>
+<h3 class="font-h3-card text-h3-card text-primary mb-1">dr. Andi, Sp.P</h3>
+<p class="font-label-ui text-label-ui text-recovery-green-dark mb-4">Spesialis Paru &amp; Pernapasan</p>
+<p class="font-body-standard text-body-standard text-text-muted italic">"Kesehatan paru-paru adalah investasi terbaik untuk masa depan yang lebih cerah."</p>
+</div>
+<!-- Dr Budi -->
+<div class="group">
+<div class="rounded-2xl overflow-hidden mb-6 relative">
+<img class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Dr. Budi, an experienced senior male medical professional with a friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnD_rrEveW9H3ZJJAa08cFBnZLxHHKmFO1yty4_Ois_t5Dhj2xYeIwhPch8EL-jVcBQdCRP-n0lbD5AAB7aTRiMgaPSF0Kb09xJkXgorldOFZ90xbMraTuhLgVe_FpELAkXjS2Z_MwcABhlDx2SRKbcP7_yEQ-jqmIzKGXfrF3Id_Pk9mvRZFVTrTcBpQltdkR_Z7DAv-AwPx1JDURWqf-K_RqI0ZMFOm4UMhbJAMGLlnvXxT6x-V2zMFs9UQUPLAHe5IgB49t2Hs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="flex gap-3">
+<a class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/40" href="#"><span class="material-symbols-outlined text-sm">link</span></a>
+</div>
+</div>
+</div>
+<h3 class="font-h3-card text-h3-card text-primary mb-1">dr. Budi, Sp.KJ</h3>
+<p class="font-label-ui text-label-ui text-recovery-green-dark mb-4">Psikiater Adiksi</p>
+<p class="font-body-standard text-body-standard text-text-muted italic">"Memahami psikologi di balik kebiasaan adalah kunci utama keberhasilan berhenti merokok."</p>
+</div>
+<!-- Dr Citra -->
+<div class="group">
+<div class="rounded-2xl overflow-hidden mb-6 relative">
+<img class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Dr. Citra, a compassionate female doctor in clinical attire against a bright studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkkv3yU6SNFzk0lZrsnylAaFmq-KdUQe4NiwMbIBNnDZYt3tVETETHRru3EH7VgDZdLzI1T4FZFQDtPatPGRywkA1JkV6nXodcsgzagW3CmUE3o8ZBZA_ifTB6U5wM0fEItpffoC_glzPsVXbS_NFquIOxxqyF2KkVhgv7VMdKc5AOva4Nv6wCop416NDjR1FJjspuC5UQdhLOslzTvIEYPg4bc4erpHDQr0Yr3i_X0lBGtaLm_eU-b-9RDEiGKW7aEJccrvBXC8w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<div class="flex gap-3">
+<a class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/40" href="#"><span class="material-symbols-outlined text-sm">link</span></a>
+</div>
+</div>
+</div>
+<h3 class="font-h3-card text-h3-card text-primary mb-1">dr. Citra, M.Gizi</h3>
+<p class="font-label-ui text-label-ui text-recovery-green-dark mb-4">Ahli Gizi Klinis</p>
+<p class="font-body-standard text-body-standard text-text-muted italic">"Nutrisi yang tepat membantu mempercepat detoksifikasi tubuh dari sisa-sisa racun."</p>
+</div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="py-5xl bg-primary">
+<div class="max-w-7xl mx-auto px-8 text-center mb-16">
+<h2 class="font-h2-section text-h2-section text-on-primary mb-4">Nilai-Nilai Kami</h2>
+<div class="w-24 h-1 bg-recovery-green-light mx-auto"></div>
+</div>
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-lg">
+<!-- Empathy -->
+<div class="p-xl rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 text-center">
+<span class="material-symbols-outlined text-recovery-green-light text-5xl mb-6">favorite</span>
+<h3 class="font-h3-card text-h3-card text-on-primary mb-4">Empathy</h3>
+<p class="font-body-standard text-body-standard text-slate-300">Kami mendengarkan tanpa menghakimi, memahami bahwa setiap langkah pemulihan adalah perjuangan pribadi.</p>
+</div>
+<!-- Scientific -->
+<div class="p-xl rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 text-center">
+<span class="material-symbols-outlined text-recovery-green-light text-5xl mb-6">science</span>
+<h3 class="font-h3-card text-h3-card text-on-primary mb-4">Scientific</h3>
+<p class="font-body-standard text-body-standard text-slate-300">Setiap metode yang kami gunakan berlandaskan riset klinis terbaru dan standar medis internasional.</p>
+</div>
+<!-- Transparent -->
+<div class="p-xl rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 text-center">
+<span class="material-symbols-outlined text-recovery-green-light text-5xl mb-6">visibility</span>
+<h3 class="font-h3-card text-h3-card text-on-primary mb-4">Transparent</h3>
+<p class="font-body-standard text-body-standard text-slate-300">Keterbukaan dalam biaya, prosedur, dan hasil diagnosa adalah komitmen utama kami kepada pasien.</p>
+</div>
+</div>
+</section>
+<!-- Certification & Accreditation -->
+<section class="py-5xl border-b border-slate-100">
+<div class="max-w-7xl mx-auto px-8">
+<p class="text-center font-label-ui text-label-ui text-text-muted uppercase tracking-[4px] mb-12">Certified &amp; Accredited by</p>
+<div class="grid grid-cols-3 md:grid-cols-3 items-center justify-items-center opacity-40 grayscale gap-12">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-5xl">health_metrics</span>
+<span class="font-bold text-xl">IDI</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-5xl">pulmonology</span>
+<span class="font-bold text-xl">PDPI</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-5xl">medical_services</span>
+<span class="font-bold text-xl">KKI</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t border-slate-200">
+<div class="max-w-7xl mx-auto px-8 py-16 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="font-serif font-bold text-blue-900 text-xl">StopSmoking MD</div>
+<p class="font-sans text-sm text-slate-500 text-center md:text-left">© 2024 Medical Trust Stop Smoking Clinic. Certified Clinical Care.</p>
+</div>
+<div class="flex gap-8 flex-wrap justify-center">
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 transition-all hover:underline" href="#">Medical Disclaimer</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 transition-all hover:underline" href="#">Privacy Policy</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 transition-all hover:underline" href="#">Terms of Service</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 transition-all hover:underline" href="#">Patient Rights</a>
+</div>
+</div>
+</footer>
+<!-- Floating WhatsApp CTA -->
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-recovery-green-dark text-white rounded-full flex items-center justify-center shadow-2xl whatsapp-pulse z-[100] transition-transform hover:scale-110 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-3xl">chat</span>
+<span class="absolute right-full mr-4 bg-white text-primary px-4 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-label-ui">Chat with our Specialist</span>
+</a>
+</body></html>

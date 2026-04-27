@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1b21",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#faf8ff",
+                        "inverse-on-surface": "#f1f0f7",
+                        "surface-bright": "#faf8ff",
+                        "recovery-green-light": "#34D399",
+                        "surface-variant": "#e3e1e9",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-tertiary-fixed": "#341100",
+                        "outline": "#757682",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e3e1e9",
+                        "surface-container": "#eeedf4",
+                        "primary": "#00236f",
+                        "secondary-fixed-dim": "#4edea3",
+                        "primary-container": "#1e3a8a",
+                        "clean-cloud-dark": "#E2E8F0",
+                        "tertiary": "#4b1c00",
+                        "clean-cloud": "#F8FAFC",
+                        "secondary": "#006c49",
+                        "on-surface-variant": "#444651",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1b21",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "on-secondary-fixed": "#002113",
+                        "on-secondary-container": "#00714d",
+                        "surface-tint": "#4059aa",
+                        "outline-variant": "#c5c5d3",
+                        "surface-container-high": "#e9e7ef",
+                        "inverse-surface": "#2f3036",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-dim": "#dad9e1",
+                        "on-error": "#ffffff",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#f39461",
+                        "surface-card": "#FFFFFF",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "on-primary-fixed": "#00164e",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#6cf8bb",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f4f3fa",
+                        "medical-trust-light": "#3B82F6",
+                        "text-primary": "#1E3A8A",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-error-container": "#93000a",
+                        "medical-trust-dark": "#0F172A",
+                        "text-body": "#334155",
+                        "text-muted": "#64748B",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-container": "#90a8ff",
+                        "recovery-green-dark": "#059669",
+                        "tertiary-container": "#6e2c00",
+                        "on-primary-fixed-variant": "#264191"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "12px",
+                        "2xl": "20px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "4xl": "80px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "5xl": "100px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "h3-card": ["Plus Jakarta Sans"],
+                        "body-standard": ["Noto Serif"],
+                        "h2-section": ["Plus Jakarta Sans"],
+                        "h1-hero": ["Plus Jakarta Sans"],
+                        "label-ui": ["Plus Jakarta Sans"],
+                        "quote": ["Newsreader"],
+                        "h1-medical": ["Newsreader"],
+                        "body-lead": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "h3-card": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-standard": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "h2-section": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "h1-hero": ["52px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-ui": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "quote": ["22px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "h1-medical": ["48px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lead": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .whatsapp-pulse {
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+    </style>
+</head>
+<body class="bg-clean-cloud text-on-surface">
+<!-- TopNavBar -->
+<header class="docked sticky top-0 w-full z-50 border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+<div class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-400">StopSmoking MD</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-emerald-600 dark:text-emerald-400 border-b-2 border-emerald-500 pb-1 font-label-ui text-label-ui" href="#">Programs</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-all duration-300 font-label-ui text-label-ui" href="#">Specialists</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-all duration-300 font-label-ui text-label-ui" href="#">Success Stories</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 transition-all duration-300 font-label-ui text-label-ui" href="#">Clinics</a>
+</nav>
+<button class="whatsapp-pulse bg-recovery-green-dark text-on-primary px-6 py-3 rounded-xl font-label-ui text-label-ui scale-95 active:scale-90 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">chat</span>
+                WhatsApp Consultation
+            </button>
+</div>
+</header>
+<!-- Section 1: Hero -->
+<section class="relative overflow-hidden pt-5xl pb-5xl px-8 max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-xl items-center">
+<div class="z-10">
+<h1 class="font-h1-medical text-h1-medical text-primary mb-lg uppercase">
+                    BERHENTI MEROKOK ADALAH PERJALANAN, BUKAN DESTINASI
+                </h1>
+<p class="font-body-lead text-body-lead text-text-body mb-xl max-w-xl">
+                    Temukan dukungan medis profesional dan rencana pemulihan yang disesuaikan khusus untuk Anda. Mulailah hidup lebih sehat hari ini.
+                </p>
+<div class="flex flex-col sm:flex-row gap-md">
+<button class="bg-secondary text-on-primary px-8 py-4 rounded-2xl font-label-ui text-lg flex items-center justify-center gap-3 shadow-lg hover:bg-on-secondary-container transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+                        Konsultasi via WhatsApp
+                    </button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-2xl font-label-ui text-lg hover:bg-primary hover:text-on-primary transition-all">
+                        Lihat Program Kami
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary-container rounded-full blur-3xl opacity-20"></div>
+<div class="rounded-2xl overflow-hidden shadow-2xl relative">
+<img class="w-full h-auto object-cover min-h-[500px]" data-alt="A friendly professional male doctor in a white clinical coat smiling warmly in a modern bright medical office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDwn9Iw4FXPDIWLdFdu8FWf2QtMTg6q4wZgG2oISu3CyfFfcdDhwwHp8J5Kr9WVXhvJhqOdAps3x4H1l-e4XYvOUUFRJ9LPf21CcBs7bwJpYKRpN9I_8K3BIrZk6SZPIpgObJFpid426oEZV3HJ1kYAhaFhj1IN19rbbzFmndBili8OHcTH0O9x5HCD__s2qF6HnERajrSbtPnQQBHiTDcXMYgfzTCy7WmNqPzJi_FveqOWXpbgfz3vJRJdfMKfdDVpiAJK9se-WU"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4 max-w-xs">
+<div class="w-12 h-12 bg-recovery-green-light rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-label-ui text-primary">15,000+</p>
+<p class="text-xs text-text-muted">Pasien Berhasil Berhenti</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: 3 Langkah Mudah -->
+<section class="bg-surface-container-low py-5xl px-8">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-4xl">
+<h2 class="font-h2-section text-h2-section text-primary mb-md">3 Langkah Mudah</h2>
+<p class="font-body-lead text-body-lead text-text-muted max-w-2xl mx-auto">
+                    Metode kami dirancang secara klinis untuk memudahkan masa transisi Anda menjadi bebas rokok selamanya.
+                </p>
+</div>
+<div class="grid md:grid-cols-3 gap-lg">
+<!-- Step 1 -->
+<div class="bg-surface-card p-xl rounded-2xl shadow-sm border border-clean-cloud-dark hover:translate-y-[-6px] transition-all duration-300 group">
+<div class="w-16 h-16 bg-clean-cloud flex items-center justify-center rounded-full mb-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="text-2xl font-bold">1</span>
+</div>
+<h3 class="font-h3-card text-h3-card text-primary mb-md">Konsultasi Medis</h3>
+<p class="font-body-standard text-body-standard text-text-body">
+                        Bicara dengan spesialis kami untuk mengevaluasi tingkat ketergantungan dan kondisi kesehatan paru-paru Anda.
+                    </p>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-card p-xl rounded-2xl shadow-sm border border-clean-cloud-dark hover:translate-y-[-6px] transition-all duration-300 group">
+<div class="w-16 h-16 bg-clean-cloud flex items-center justify-center rounded-full mb-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="text-2xl font-bold">2</span>
+</div>
+<h3 class="font-h3-card text-h3-card text-primary mb-md">Rencana Personal</h3>
+<p class="font-body-standard text-body-standard text-text-body">
+                        Dapatkan jadwal terapi dan dukungan nutrisi yang disusun khusus sesuai profil metabolisme tubuh Anda.
+                    </p>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-card p-xl rounded-2xl shadow-sm border border-clean-cloud-dark hover:translate-y-[-6px] transition-all duration-300 group">
+<div class="w-16 h-16 bg-clean-cloud flex items-center justify-center rounded-full mb-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="text-2xl font-bold">3</span>
+</div>
+<h3 class="font-h3-card text-h3-card text-primary mb-md">Dukungan Berkelanjutan</h3>
+<p class="font-body-standard text-body-standard text-text-body">
+                        Pendampingan 24/7 melalui komunitas dan dokter pribadi untuk memastikan Anda tetap di jalur yang benar.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Doctor Preview -->
+<section class="py-5xl px-8 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-center gap-3xl">
+<div class="md:w-1/2 relative">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="Portrait of dr. Andi Wijaya, a senior medical specialist, smiling confidently in a modern clinic environment with soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuRlwi8HSSxHfYnM6tBgLRnFvx8pqS8i3IcsMFxFyAjwc0f4il687QiDP1nRv_VjJYvP_gv1Pp-ifI95l-HiEC-8F1FXjg9Um-wjKEhhiQwgchCZ7u0ZyhbSKJLHBfXyKrIbtqt9w8Q0Za5OgnKktGGDSf3MWdSzRc0T4duJkf8WdTI0hjjWJ4ClniqD51Mr9zwcp3xEA-s7fcmM-fqTXc-tTmCHN-KuJf6JMkrYnR4JmzESTvA8E-F2I9zOlxgElboRqV-WeLNZU"/>
+</div>
+<div class="absolute top-8 -right-8 bg-primary p-6 rounded-2xl text-on-primary hidden lg:block max-w-[200px]">
+<p class="font-label-ui">Spesialis Adiksi &amp; Paru</p>
+<div class="h-1 w-12 bg-recovery-green-light mt-sm"></div>
+</div>
+</div>
+<div class="md:w-1/2">
+<span class="text-secondary font-label-ui uppercase tracking-widest mb-md block">Kenali Spesialis Anda</span>
+<h2 class="font-h2-section text-h2-section text-primary mb-lg">dr. Andi Wijaya, Sp.P</h2>
+<blockquote class="font-quote text-quote italic text-text-body mb-xl border-l-4 border-recovery-green-light pl-lg">
+                    "Setiap tarikan nafas segar tanpa asap adalah kemenangan kecil menuju kehidupan yang lebih bermakna. Kami di sini untuk memastikan kemenangan itu menjadi milik Anda."
+                </blockquote>
+<p class="font-body-standard text-body-standard text-text-body mb-xl">
+                    Dengan pengalaman lebih dari 15 tahun dalam membantu pasien mengatasi ketergantungan nikotin, dr. Andi mengedepankan pendekatan humanis yang dikombinasikan dengan sains medis terkini.
+                </p>
+<button class="text-secondary font-label-ui flex items-center gap-2 hover:gap-4 transition-all group">
+                    Pelajari Profile Dokter 
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 5: Inverted Testimonial (Dark Blue) -->
+<section class="bg-primary-container text-on-primary py-5xl px-8">
+<div class="max-w-7xl mx-auto text-center">
+<h2 class="font-h2-section text-h2-section mb-4xl">Kisah Keberhasilan</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-xl">
+<!-- Testimonial 1 -->
+<div class="bg-primary p-xl rounded-2xl border border-white/10 text-left">
+<div class="flex text-on-primary-container mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-standard italic mb-xl opacity-90 text-on-primary-container">"Sudah 20 tahun saya merokok, dan hanya dalam 3 bulan dengan program StopSmoking MD, saya benar-benar bebas. Nafas terasa jauh lebih ringan!"</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-white/20">
+<img class="w-full h-full object-cover" data-alt="Headshot of a middle-aged man smiling happily with clear skin and healthy appearance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1FwfO2w6N2uJQyqZtR6u0Y_UqTzxccAqZCsHK-ZxWdYp5LhnpItSJ0tJCSKNYBMOuSL_9pU-kssXZCH5f5Y9___tzaqTQC5Hsj1RGrmTDONGI66RirGAoHWS5FIUm_w0MP2jnSzj0pCZpJvSmWJwXtrJWdOVx_8OO0AwguTee5NjYlA9SQrQIzMTzv9aQhDGXWy-paVT6YyqRsIuOcF6Ql-3qKEVWYJ7UL6H3M48EYqkfBLD9b6__3fTGm-4g00YEehUjDt-B5Us"/>
+</div>
+<div>
+<p class="font-label-ui">Bapak Ridwan</p>
+<p class="text-xs opacity-60">Wiraswasta, 45 thn</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-primary p-xl rounded-2xl border border-white/10 text-left">
+<div class="flex text-on-primary-container mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-standard italic mb-xl opacity-90 text-on-primary-container">"Pendekatan dokternya sangat sabar. Saya tidak merasa dipaksa, tapi dibimbing. Sekarang saya bisa lari marathon lagi."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-white/20">
+<img class="w-full h-full object-cover" data-alt="Close up of a smiling woman in active wear looking refreshed in an outdoor setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIKcHGyceCfTaaYk0oURT7BFp4E1crFm7fbaJpLl2SWU595_o97TXiXBFtm1tz6z2T_7qH_jzSOY50Yn_on8378XnZuoPc250WVdhzo-u_Bjk808ZRaQxjDdGX6GohGWTUItzFd3dmC4cW7nE-XjaV8ijKAw7AfW7BNYgfIQ4G4mu-3AynyKsI9J7mxwCRGTHFPdatUMK9535qWuAIevS_QHUlSADxGAPfSfGd8yZL3GaKi_YxDnE94_NfUIS1OyTj2WNGGED1PgM"/>
+</div>
+<div>
+<p class="font-label-ui">Ibu Maya</p>
+<p class="text-xs opacity-60">Guru, 32 thn</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-primary p-xl rounded-2xl border border-white/10 text-left md:col-span-2 lg:col-span-1">
+<div class="flex text-on-primary-container mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-standard italic mb-xl opacity-90 text-on-primary-container">"Fasilitas kliniknya sangat modern dan nyaman. Support sistemnya luar biasa terutama saat masa-masa kritis di minggu pertama."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-white/20">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young professional man in a casual suit looking confident and healthy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChBxL8QvWgOu6vaTPHthBZ2YMngNwWpKfihBfWk8cHidB97XgFOUVpgadjFunRDuDoX5Mph9jYV8p-cTQcPT8tOzEfmd7LELusoI-QohGjUN8A7Mg_RTw852S21ARZ0bIFS59cYfm8gwli4JxiBNYFQiVILeKi4rrRKwyFIO6B4M0LTViHiE3xQ8zknQ0_UVd-wuM8wtMR-ynlySnCiQH3G9_Wo86xThbQxxqOjJR030pv5uFSq85b8nnz8BmAv3gCXLGXwDz32oc"/>
+</div>
+<div>
+<p class="font-label-ui">Kevin Hartanto</p>
+<p class="text-xs opacity-60">IT Consultant, 28 thn</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Blog Preview Grid -->
+<section class="py-5xl px-8 max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-4xl">
+<div>
+<h2 class="font-h2-section text-h2-section text-primary mb-md">Edukasi &amp; Tips</h2>
+<p class="font-body-standard text-text-muted">Wawasan terbaru untuk membantu Anda tetap sehat.</p>
+</div>
+<button class="hidden md:block border-b-2 border-secondary text-secondary font-label-ui pb-1 hover:text-primary hover:border-primary transition-all">Lihat Semua Artikel</button>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-clean-cloud-dark group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bowl of fresh colorful fruits and vegetables representing healthy nutrition for lung recovery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT5weUa-4BlRGpJySJUc-ZghigdFn8Z1jYYX621pmppw3srTLvXGsrIvF5EJSibp_iYhrhlB2hQOG4C9NWAOV95GZ1wPa_lF2rOPUFxP89VyabeNUpFDV4MyNBNu1s4DiFsyE8iJkO2N_8sPrjxXp7DOFyu09Zq39G1fZh9A9tkHMhj7ipi9Lktkd1bjV9wdHKuKX5tv21lx-USqvgw4Po13lx6KI_P22yDLDNB5iLzsyOEnlCb5J-Gjh0ttSB0ntrRRsVG8u2VwA"/>
+</div>
+<div class="p-xl">
+<span class="bg-secondary-container text-on-secondary-fixed-variant px-3 py-1 rounded-full text-[12px] font-bold mb-md inline-block">NUTRITION</span>
+<h3 class="font-h3-card text-xl text-primary mb-md">Makanan Terbaik untuk Membersihkan Paru-paru</h3>
+<p class="text-text-body text-sm mb-lg">Pelajari daftar superfood yang membantu proses detoksifikasi nikotin secara alami.</p>
+<a class="text-secondary font-label-ui flex items-center gap-1 group-hover:gap-3 transition-all" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-clean-cloud-dark group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of someone meditating in a peaceful sunlit room with indoor plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_y4O2OeaA7uc-fzMRe_LWM8cpMvY1l-ILN8H3CYqOA4mZo3khMR0A4xLD3OIjTJrGUpWPdh6CMwprVpnuGvdbIWfMwE30aKwI7l7NsihlW8NzFGNH5iLOAvTLzF2_F-lqzPNS2_Agp4EeyW_tnXTAPkPTBm4PruXeVbWeN8LlmB-M2gMvI7oHcAghinSCYCbW3SFxR8J7uIJbE_jP_dFhs1BPEYJCv6IaDtFd-Ew3c16aHDLdKpq7UU2KuWXP1D7WnKv-e1pw4ZE"/>
+</div>
+<div class="p-xl">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-bold mb-md inline-block">MENTAL HEALTH</span>
+<h3 class="font-h3-card text-xl text-primary mb-md">Mengelola Stres Tanpa Rokok: Teknik Meditasi</h3>
+<p class="text-text-body text-sm mb-lg">3 teknik pernapasan sederhana untuk meredakan keinginan merokok saat stres melanda.</p>
+<a class="text-secondary font-label-ui flex items-center gap-1 group-hover:gap-3 transition-all" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-clean-cloud-dark group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A jar of money with a small plant growing out of it, representing financial savings from quitting smoking" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuLkN08iqIJPyD5C2HMPrELhzQ-xzODOautq5QXd0p0YsOqEfcRjnnkdX-kM_iJ9c7feYVojr49W9iXiIH27GN2KyuGCGhsThFWjcnx4XQBpgIAE-d-sh1lqWXSoLr_B_TGZ-nx1Gty6O2RI0WT_LTNs-EZzQqkiMOBDg52_7reclRFUOAHI-qDBjQUFOvNp2LHfqCZwFqG1xZKTxP8bJQmWt02GWFspRLuVLpHRj9TuZwf6v9hsfvLJ7992eDQmvRFjkFvQ5JMw4"/>
+</div>
+<div class="p-xl">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[12px] font-bold mb-md inline-block">FINANCE</span>
+<h3 class="font-h3-card text-xl text-primary mb-md">Berapa Banyak yang Anda Hemat Tanpa Rokok?</h3>
+<p class="text-text-body text-sm mb-lg">Kalkulasi finansial jangka panjang dan apa yang bisa Anda beli dari tabungan rokok Anda.</p>
+<a class="text-secondary font-label-ui flex items-center gap-1 group-hover:gap-3 transition-all" href="#">Baca Selengkapnya <span class="material-symbols-outlined text-sm">chevron_right</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Bottom CTA -->
+<section class="py-5xl px-8">
+<div class="max-w-5xl mx-auto bg-gradient-to-br from-primary to-primary-container rounded-3xl p-3xl text-center text-on-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary-container rounded-full blur-3xl opacity-10 -mr-32 -mt-32"></div>
+<div class="relative z-10">
+<h2 class="font-h2-section text-h2-section mb-lg">Siap Memulai Hidup Baru?</h2>
+<p class="font-body-lead mb-2xl opacity-80 max-w-2xl mx-auto">Jangan tunda lagi kesehatan Anda. Hubungi tim medis kami sekarang untuk jadwal konsultasi pertama Anda secara GRATIS via WhatsApp.</p>
+<div class="flex justify-center">
+<button class="whatsapp-pulse bg-secondary text-on-primary px-12 py-5 rounded-2xl font-h3-card text-2xl flex items-center gap-4 shadow-2xl hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                        Chat WhatsApp Sekarang
+                    </button>
+</div>
+<p class="mt-xl text-sm opacity-60 font-label-ui">Respon cepat dalam &lt; 5 menit</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+<div class="max-w-7xl mx-auto px-8 py-16 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-serif font-bold text-blue-900 dark:text-blue-400 text-xl mb-md">StopSmoking MD</div>
+<p class="font-sans text-sm text-slate-500 dark:text-slate-400 text-center md:text-left max-w-xs">© 2024 Medical Trust Stop Smoking Clinic. Certified Clinical Care.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 dark:hover:text-blue-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Medical Disclaimer</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 dark:hover:text-blue-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 dark:hover:text-blue-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 dark:hover:text-blue-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Patient Rights</a>
+</div>
+<div class="flex gap-md">
+<div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-xl">share</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-xl">location_on</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Floating WhatsApp FAB -->
+<div class="fixed bottom-8 right-8 z-[100] group">
+<div class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-label-ui text-primary pointer-events-none">
+            Butuh Bantuan? Chat Kami
+        </div>
+<button class="whatsapp-pulse w-16 h-16 bg-secondary text-white rounded-full shadow-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+</button>
+</div>
+</body></html>

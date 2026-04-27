@@ -1,0 +1,227 @@
+---
+const testimonials = [
+  {
+    name: 'Ahmad Fauzi',
+    age: 42,
+    detail: 'Mantan perokok 1 bungkus/hari',
+    result: '8 bulan bebas rokok',
+    quote: 'Saya merokok 15 tahun. Setelah konsultasi dengan dr. Andi dan 2x pertemuan gratis, saya berhasil berhenti total. Sekarang sudah 8 bulan bebas rokok dan badan terasa jauh lebih sehat.',
+    rating: 5,
+    initial: 'A',
+  },
+  {
+    name: 'Siti Rahayu',
+    age: 38,
+    detail: 'Mantan perokok 10 tahun',
+    result: '1 tahun bebas rokok',
+    quote: 'Awalnya saya skeptis dengan layanan gratis. Tapi setelah konsultasi online pertama, saya langsung percaya dengan profesionalisme dokternya. Sekarang sudah 1 tahun tidak merokok!',
+    rating: 5,
+    initial: 'S',
+  },
+  {
+    name: 'Budi Santoso',
+    age: 55,
+    detail: 'Mantan perokok 2 bungkus/hari',
+    result: '6 bulan bebas rokok',
+    quote: 'Seumur hidup saya pikir tidak bisa berhenti. Dengan dukungan tim dokter di sini, rencana berhenti yang personal, dan group support, saya berhasil. Terima kasih banyak!',
+    rating: 5,
+    initial: 'B',
+  },
+  {
+    name: 'Dewi Maharani',
+    age: 31,
+    detail: 'Mantan perokok 5 tahun',
+    result: '4 bulan bebas rokok',
+    quote: 'Program pendampingannya luar biasa. Dokter selalu siap dihubungi, dan ada grup support yang sangat membantu saat saya hampir menyerah. Highly recommended!',
+    rating: 5,
+    initial: 'D',
+  },
+  {
+    name: 'Reza Maulana',
+    age: 45,
+    detail: 'Mantan perokok sejak SMA',
+    result: '3 bulan bebas rokok',
+    quote: 'Sudah 30 tahun merokok, saya kira tidak mungkin berhenti. Tapi dengan metode yang tepat dan dokter yang sabar, saya bisa. Tidak ada kata terlambat untuk memulai!',
+    rating: 5,
+    initial: 'R',
+  },
+];
+---
+
+<section class="section-pad bg-medical-trust relative overflow-hidden" aria-labelledby="testimonial-heading">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"
+         style="background: radial-gradient(circle, #10B981, transparent);">
+    </div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10"
+         style="background: radial-gradient(circle, #3B82F6, transparent);">
+    </div>
+  </div>
+
+  <div class="container-main relative">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <span class="inline-block bg-recovery-green text-white font-nunito font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-wide mb-4 reveal">
+        Testimoni Pasien
+      </span>
+      <h2 id="testimonial-heading" class="font-nunito font-bold text-white leading-tight mb-4 reveal"
+          style="font-size: clamp(28px, 4vw, 40px);" data-delay="100">
+        Cerita Keberhasilan Mereka
+      </h2>
+      <p class="font-opensans text-white/80 text-lead max-w-xl mx-auto reveal" data-delay="200">
+        Dari perokok aktif menjadi non-perokok — ini adalah kisah nyata mereka.
+      </p>
+    </div>
+
+    <!-- Carousel -->
+    <div class="relative reveal" data-delay="300">
+      <div id="testimonial-track" class="overflow-hidden">
+        <div id="testimonial-inner" class="flex gap-6 transition-transform duration-500 ease-out">
+          {testimonials.map((t, i) => (
+            <div class="testimonial-card shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]
+                        bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+              <!-- Quote icon -->
+              <svg class="w-8 h-8 text-recovery-green mb-4 opacity-80" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M10 8C6.686 8 4 10.686 4 14v12h12V14h-8c0-2.206 1.794-4 4-4V8zm18 0c-3.314 0-6 2.686-6 6v12h12V14h-8c0-2.206 1.794-4 4-4V8z"/>
+              </svg>
+
+              <!-- Quote text -->
+              <blockquote class="font-lora italic text-white text-body leading-relaxed mb-6">
+                "{t.quote}"
+              </blockquote>
+
+              <!-- Divider -->
+              <div class="border-t border-white/20 mb-4"></div>
+
+              <!-- Author -->
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full bg-recovery-green/30 flex items-center justify-center
+                            font-nunito font-bold text-white text-lg shrink-0">
+                  {t.initial}
+                </div>
+                <div class="flex-1">
+                  <p class="font-nunito font-semibold text-white text-sm">{t.name}, {t.age} tahun</p>
+                  <p class="font-opensans text-white/60 text-xs">{t.detail}</p>
+                </div>
+                <div class="text-right">
+                  <div class="flex gap-0.5 mb-0.5" aria-label={`Rating ${t.rating} bintang`}>
+                    {Array(t.rating).fill(0).map(() => (
+                      <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <span class="badge-pill bg-recovery-green/20 text-recovery-green-light text-[10px]">{t.result}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex items-center justify-center gap-4 mt-8">
+        <button id="prev-btn"
+                class="w-10 h-10 rounded-full border border-white/30 text-white flex items-center justify-center
+                       hover:bg-white/20 transition-colors disabled:opacity-30"
+                aria-label="Testimoni sebelumnya">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+
+        <!-- Dots -->
+        <div id="dots" class="flex gap-2" role="tablist" aria-label="Testimonial navigation">
+          {testimonials.map((_, i) => (
+            <button
+              class={`dot w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === 0 ? 'bg-recovery-green w-6' : 'bg-white/30'}`}
+              data-index={i}
+              role="tab"
+              aria-label={`Testimoni ${i + 1}`}
+              aria-selected={i === 0 ? 'true' : 'false'}
+            ></button>
+          ))}
+        </div>
+
+        <button id="next-btn"
+                class="w-10 h-10 rounded-full border border-white/30 text-white flex items-center justify-center
+                       hover:bg-white/20 transition-colors"
+                aria-label="Testimoni berikutnya">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById('testimonial-track') as HTMLElement;
+  const inner = document.getElementById('testimonial-inner') as HTMLElement;
+  const cards = document.querySelectorAll('.testimonial-card') as NodeListOf<HTMLElement>;
+  const dots = document.querySelectorAll('.dot') as NodeListOf<HTMLElement>;
+  const prevBtn = document.getElementById('prev-btn') as HTMLButtonElement;
+  const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
+
+  let currentIndex = 0;
+  let autoPlayInterval: ReturnType<typeof setInterval>;
+
+  function getVisible() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  }
+
+  function goTo(index: number) {
+    const visible = getVisible();
+    const max = cards.length - visible;
+    currentIndex = Math.max(0, Math.min(index, max));
+
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 24;
+    inner.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+
+    dots.forEach((dot, i) => {
+      const isActive = i === currentIndex;
+      dot.classList.toggle('bg-recovery-green', isActive);
+      dot.classList.toggle('w-6', isActive);
+      dot.classList.toggle('bg-white/30', !isActive);
+      dot.setAttribute('aria-selected', String(isActive));
+    });
+
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= max;
+  }
+
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+      const visible = getVisible();
+      const max = cards.length - visible;
+      goTo(currentIndex < max ? currentIndex + 1 : 0);
+    }, 5000);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  prevBtn?.addEventListener('click', () => { stopAutoPlay(); goTo(currentIndex - 1); startAutoPlay(); });
+  nextBtn?.addEventListener('click', () => { stopAutoPlay(); goTo(currentIndex + 1); startAutoPlay(); });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      stopAutoPlay();
+      goTo(parseInt(dot.dataset.index || '0'));
+      startAutoPlay();
+    });
+  });
+
+  track?.addEventListener('mouseenter', stopAutoPlay);
+  track?.addEventListener('mouseleave', startAutoPlay);
+
+  goTo(0);
+  startAutoPlay();
+  window.addEventListener('resize', () => goTo(0));
+</script>

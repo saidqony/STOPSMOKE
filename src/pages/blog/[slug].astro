@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import { WA_LINK } from '../../utils/whatsapp';
+
+const articles: Record<string, any> = {
+  'tips-berhenti-merokok-tanpa-tersiksa': {
+    category: 'Tips',
+    title: '5 Tips Berhenti Merokok Tanpa Tersiksa yang Terbukti Efektif',
+    excerpt: 'Berhenti merokok tidak harus menyakitkan. Dengan strategi yang tepat dan dukungan medis, banyak orang berhasil berhenti.',
+    date: '20 April 2026', readTime: 5, icon: '💡',
+    gradient: 'from-recovery-green/20 to-medical-trust/10',
+    content: `
+      <p>Banyak orang berpikir bahwa berhenti merokok adalah proses yang penuh penderitaan. Nyatanya, dengan pendekatan yang tepat, banyak pasien kami berhasil berhenti dengan nyaman.</p>
+      <h2>1. Tentukan Tanggal Berhenti yang Realistis</h2>
+      <p>Pilih tanggal dalam 2 minggu ke depan. Tidak terlalu jauh sehingga Anda kehilangan motivasi, dan tidak terlalu dekat sehingga Anda tidak sempat mempersiapkan diri.</p>
+      <h2>2. Identifikasi Pemicu Anda</h2>
+      <p>Catat situasi, emosi, atau aktivitas yang memicu keinginan merokok — stres kerja, kopi pagi, atau setelah makan. Mengenali pemicu adalah langkah pertama mengatasinya.</p>
+      <h2>3. Ganti dengan Kebiasaan Sehat</h2>
+      <p>Saat keinginan merokok datang, ganti dengan minum segelas air, jalan kaki singkat, atau latihan pernapasan dalam 3-5 menit.</p>
+      <h2>4. Dapatkan Dukungan Medis</h2>
+      <p>Konsultasi dengan dokter ahli dapat meningkatkan peluang keberhasilan hingga 3x lipat dibanding berhenti sendiri. Tim kami siap membantu.</p>
+      <h2>5. Bergabung dengan Komunitas Support</h2>
+      <p>Berbagi pengalaman dengan sesama yang sedang berjuang berhenti merokok memberikan kekuatan moral yang luar biasa.</p>
+    `,
+  },
+  'dampak-merokok-pada-paru-paru': {
+    category: 'Edukasi',
+    title: 'Apa yang Terjadi pada Paru-paru Setelah Anda Berhenti Merokok?',
+    excerpt: 'Dalam 20 menit pertama berhenti merokok, tubuh Anda sudah mulai pulih. Pelajari perjalanan pemulihan paru-paru.',
+    date: '15 April 2026', readTime: 7, icon: '🫁',
+    gradient: 'from-medical-trust/20 to-recovery-green/5',
+    content: `
+      <p>Tubuh manusia memiliki kemampuan luar biasa untuk memulihkan diri. Begitu Anda berhenti merokok, proses penyembuhan dimulai hampir seketika.</p>
+      <h2>20 Menit Setelah Berhenti</h2>
+      <p>Detak jantung dan tekanan darah mulai turun ke level normal. Sirkulasi darah ke tangan dan kaki meningkat.</p>
+      <h2>8 Jam Setelah Berhenti</h2>
+      <p>Kadar karbon monoksida dalam darah turun ke level normal, memungkinkan oksigen mengalir lebih lancar ke seluruh organ.</p>
+      <h2>48 Jam Setelah Berhenti</h2>
+      <p>Ujung saraf yang rusak mulai tumbuh kembali. Indera penciuman dan perasa mulai membaik.</p>
+      <h2>2-12 Minggu</h2>
+      <p>Fungsi paru meningkat hingga 30%. Batuk dan sesak napas berkurang signifikan.</p>
+      <h2>1-9 Bulan</h2>
+      <p>Silia di saluran napas mulai bekerja kembali, membersihkan lendir dan mengurangi risiko infeksi.</p>
+    `,
+  },
+  'cerita-sukses-pak-budi': {
+    category: 'Cerita Sukses',
+    title: 'Dari 2 Bungkus Per Hari ke Bebas Total: Kisah Pak Budi',
+    excerpt: 'Pak Budi merokok 2 bungkus sehari selama 30 tahun. Ia kini sudah 6 bulan bebas rokok.',
+    date: '10 April 2026', readTime: 4, icon: '🏆',
+    gradient: 'from-yellow-100 to-orange-50',
+    content: `
+      <p>"Saya tidak pernah menyangka bisa berhenti merokok di usia 55 tahun. Tapi di sinilah saya sekarang — 6 bulan bebas rokok."</p>
+      <p>Budi Santoso (55) mulai merokok saat SMA. Selama 30 tahun, ia tidak pernah serius mencoba berhenti. Sampai serangan sesak napas parah membuatnya masuk UGD.</p>
+      <h2>Titik Balik</h2>
+      <p>"Dokter bilang paru-paru saya sudah dalam kondisi kritis. Saat itu saya sadar: merokok atau hidup — saya harus pilih."</p>
+      <h2>Proses dengan Tim Dokter</h2>
+      <p>Pak Budi memulai konsultasi online gratis, lalu 2 pertemuan langsung dengan dr. Andi. Rencana personal dibuat khusus untuk kondisi dan kebiasaannya.</p>
+      <h2>6 Bulan Kemudian</h2>
+      <p>"Sekarang saya bisa naik tangga tanpa ngos-ngosan. Cucu saya senang karena kakeknya tidak berbau asap rokok lagi. Ini keputusan terbaik dalam hidup saya."</p>
+    `,
+  },
+  'kandungan-rokok-yang-berbahaya': {
+    category: 'Edukasi',
+    title: '4.000 Zat Kimia dalam Rokok: Mana yang Paling Berbahaya?',
+    excerpt: 'Rokok mengandung lebih dari 4.000 senyawa kimia berbahaya. Artikel ini membahas 10 zat paling merusak.',
+    date: '5 April 2026', readTime: 8, icon: '🧪',
+    gradient: 'from-red-100 to-pink-50',
+    content: `
+      <p>Ketika Anda menghirup asap rokok, Anda memasukkan lebih dari 4.000 senyawa kimia ke dalam tubuh. Setidaknya 70 di antaranya terbukti menyebabkan kanker.</p>
+      <h2>Nikotin</h2>
+      <p>Zat adiktif utama yang menstimulasi pelepasan dopamin di otak, menciptakan rasa senang sekaligus ketergantungan kuat.</p>
+      <h2>Tar</h2>
+      <p>Residu lengket yang menempel di paru-paru, menyumbat saluran napas dan mengandung ratusan karsinogen.</p>
+      <h2>Karbon Monoksida</h2>
+      <p>Gas beracun yang mengikat hemoglobin 200x lebih kuat daripada oksigen, mengurangi kemampuan darah membawa oksigen.</p>
+      <h2>Formaldehida</h2>
+      <p>Bahan pengawet mayat yang menyebabkan iritasi saluran napas dan terbukti karsinogenik pada manusia.</p>
+    `,
+  },
+  'nikotin-dan-ketergantungan': {
+    category: 'Penelitian',
+    title: 'Bagaimana Nikotin Menciptakan Ketergantungan di Otak Anda?',
+    excerpt: 'Penelitian neurosains terbaru mengungkap mekanisme nikotin dalam memanipulasi sistem reward otak.',
+    date: '1 April 2026', readTime: 10, icon: '🧠',
+    gradient: 'from-purple-100 to-blue-50',
+    content: `
+      <p>Untuk memahami mengapa berhenti merokok sulit, kita perlu memahami apa yang nikotin lakukan pada otak.</p>
+      <h2>Sistem Reward Otak</h2>
+      <p>Otak memiliki sistem reward alami yang melepaskan dopamin saat kita melakukan hal menyenangkan. Nikotin membajak sistem ini.</p>
+      <h2>Cara Nikotin Bekerja</h2>
+      <p>Dalam 7-10 detik setelah menghirup asap rokok, nikotin mencapai otak dan mengikat reseptor asetilkolin nikotinik, memicu ledakan dopamin.</p>
+      <h2>Toleransi dan Ketergantungan</h2>
+      <p>Otak beradaptasi dengan meningkatkan jumlah reseptor nikotin. Ini berarti Anda butuh lebih banyak rokok untuk efek yang sama.</p>
+      <h2>Gejala Putus Nikotin</h2>
+      <p>Saat nikotin tidak tersedia, gejala withdrawal muncul: iritabilitas, cemas, sulit konsentrasi, dan keinginan kuat merokok — ini bersifat sementara dan dapat dikelola.</p>
+    `,
+  },
+  'olahraga-bantu-berhenti-merokok': {
+    category: 'Tips',
+    title: 'Olahraga sebagai Senjata Rahasia Berhenti Merokok',
+    excerpt: 'Studi menunjukkan bahwa olahraga teratur dapat mengurangi keinginan merokok hingga 50%.',
+    date: '28 Maret 2026', readTime: 6, icon: '🏃',
+    gradient: 'from-green-100 to-teal-50',
+    content: `
+      <p>Penelitian dari University of Exeter menemukan bahwa 5 menit olahraga intensitas sedang dapat mengurangi craving merokok secara signifikan. Ini bukan kebetulan.</p>
+      <h2>Mengapa Olahraga Membantu?</h2>
+      <p>Olahraga melepaskan endorfin dan dopamin alami — neurotransmitter yang sama yang dimanipulasi nikotin. Ini membantu mengisi "kekosongan" yang terasa saat berhenti merokok.</p>
+      <h2>Olahraga Terbaik untuk Berhenti Merokok</h2>
+      <p><strong>Jalan cepat:</strong> Mudah dimulai, efektif 20-30 menit/hari. <strong>Yoga:</strong> Menggabungkan pernapasan sadar dan relaksasi. <strong>Berenang:</strong> Melatih kapasitas paru sekaligus menyegarkan.</p>
+      <h2>Cara Memulai</h2>
+      <p>Mulai dengan 10 menit/hari. Pilih waktu yang biasa Anda gunakan untuk merokok. Konsistensi lebih penting daripada intensitas di tahap awal.</p>
+    `,
+  },
+};
+
+const { slug } = Astro.params;
+const article = articles[slug as string];
+
+if (!article) return Astro.redirect('/blog');
+
+const categoryColors: Record<string, string> = {
+  'Tips': 'bg-recovery-green/10 text-recovery-green-dark',
+  'Edukasi': 'bg-medical-trust/10 text-medical-trust',
+  'Cerita Sukses': 'bg-yellow-100 text-yellow-700',
+  'Penelitian': 'bg-purple-100 text-purple-700',
+};
+---
+
+<BaseLayout title={article.title} description={article.excerpt}>
+  <!-- Article Hero -->
+  <section class={`h-64 md:h-80 bg-gradient-to-br ${article.gradient} flex items-center relative overflow-hidden`}>
+    <div class="container-main relative z-10">
+      <div class="flex items-center gap-2 mb-4">
+        <a href="/blog" class="font-opensans text-text-muted text-sm hover:text-medical-trust transition-colors">Blog</a>
+        <span class="text-text-light">/</span>
+        <span class={`badge-pill ${categoryColors[article.category] || ''}`}>{article.category}</span>
+      </div>
+      <h1 class="font-lora font-semibold text-medical-trust max-w-2xl leading-tight"
+          style="font-size: clamp(22px, 3.5vw, 36px);">
+        {article.title}
+      </h1>
+      <div class="flex items-center gap-4 mt-4 text-text-muted font-opensans text-sm">
+        <span>{article.date}</span>
+        <span>•</span>
+        <span>{article.readTime} menit baca</span>
+      </div>
+    </div>
+    <div class="absolute right-12 top-1/2 -translate-y-1/2 text-9xl opacity-20" aria-hidden="true">{article.icon}</div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="section-pad bg-white">
+    <div class="container-main">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Content -->
+        <div class="lg:col-span-2">
+          <p class="font-lora text-text-body text-xl leading-relaxed mb-8 border-l-4 border-recovery-green pl-6 italic">
+            {article.excerpt}
+          </p>
+          <div class="prose prose-lg max-w-none
+                      [&_h2]:font-nunito [&_h2]:font-bold [&_h2]:text-medical-trust [&_h2]:text-2xl [&_h2]:mt-10 [&_h2]:mb-4
+                      [&_p]:font-opensans [&_p]:text-text-body [&_p]:leading-relaxed [&_p]:mb-5
+                      [&_strong]:text-medical-trust"
+               set:html={article.content}>
+          </div>
+
+          <!-- CTA after article -->
+          <div class="mt-12 bg-medical-trust rounded-3xl p-8 text-center">
+            <h2 class="font-nunito font-bold text-white text-2xl mb-3">
+              Siap Memulai Perjalanan Bebas Rokok?
+            </h2>
+            <p class="font-opensans text-white/80 text-sm mb-6">
+              Konsultasikan kondisi Anda dengan dokter ahli kami — gratis, tanpa syarat.
+            </p>
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="btn-white">
+              Tanya Dokter Gratis Sekarang
+            </a>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6">
+          <!-- Back to blog -->
+          <a href="/blog" class="inline-flex items-center gap-2 font-opensans text-sm text-medical-trust hover:text-recovery-green transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Kembali ke Blog
+          </a>
+
+          <!-- Quick links -->
+          <div class="card-base p-6">
+            <h3 class="font-nunito font-bold text-medical-trust text-lg mb-4">Layanan Kami</h3>
+            <ul class="space-y-3">
+              {[
+                { label: 'Konsultasi Online Gratis', href: '/layanan' },
+                { label: '2x Pertemuan Langsung', href: '/layanan' },
+                { label: 'Program 3 Bulan', href: '/harga' },
+              ].map(l => (
+                <li>
+                  <a href={l.href} class="flex items-center gap-2 font-opensans text-sm text-text-muted hover:text-recovery-green transition-colors">
+                    <svg class="w-4 h-4 text-recovery-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- WhatsApp CTA -->
+          <div class="bg-recovery-green rounded-2xl p-6 text-center">
+            <p class="font-nunito font-bold text-white text-lg mb-2">Butuh Konsultasi?</p>
+            <p class="font-opensans text-white/80 text-xs mb-4">Dokter kami siap membantu Anda sekarang.</p>
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
+               class="block bg-white text-recovery-green font-nunito font-bold text-sm py-3 px-5 rounded-xl hover:shadow-md transition-shadow">
+              Chat Gratis →
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

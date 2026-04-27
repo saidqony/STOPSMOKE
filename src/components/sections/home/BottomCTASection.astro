@@ -1,0 +1,72 @@
+---
+import { WA_LINK, WA_DISPLAY } from '../../../utils/whatsapp';
+---
+
+<section class="section-pad bg-clean-cloud relative overflow-hidden" aria-labelledby="cta-heading">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full opacity-10"
+         style="background: radial-gradient(circle, #10B981, transparent); transform: translate(30%, 30%);">
+    </div>
+    <div class="absolute top-0 left-0 w-64 h-64 rounded-full opacity-5"
+         style="background: radial-gradient(circle, #1E3A8A, transparent); transform: translate(-30%, -30%);">
+    </div>
+  </div>
+
+  <div class="container-main relative">
+    <div class="max-w-2xl mx-auto text-center">
+      <!-- Icon -->
+      <div class="w-16 h-16 rounded-2xl bg-recovery-green/10 border border-recovery-green/20
+                  flex items-center justify-center mx-auto mb-6 reveal">
+        <svg class="w-8 h-8 text-recovery-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+        </svg>
+      </div>
+
+      <h2 id="cta-heading" class="font-nunito font-bold text-medical-trust leading-tight mb-4 reveal"
+          style="font-size: clamp(28px, 4vw, 40px);" data-delay="100">
+        Siap untuk Langkah Pertama?
+      </h2>
+      <p class="font-opensans text-text-muted text-lead leading-relaxed mb-8 reveal" data-delay="200">
+        Konsultasi gratis, tanpa syarat, tanpa biaya tersembunyi.<br/>
+        Tim dokter ahli kami siap membantu Anda hari ini.
+      </p>
+
+      <!-- Primary CTA -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 reveal" data-delay="300">
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
+           class="btn-primary text-lg px-10 py-5 w-full sm:w-auto justify-center relative group"
+           onclick="if(typeof gtag!=='undefined'){gtag('event','whatsapp_click',{event_category:'bottom_cta',event_label:'bottom_cta_button'});}">
+          <!-- Pulse ring -->
+          <span class="absolute inset-0 rounded-xl bg-recovery-green animate-pulse-ring opacity-50 group-hover:hidden"></span>
+          <svg class="w-6 h-6 relative" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.549 4.103 1.508 5.831L.057 23.48a.496.496 0 00.6.6l5.748-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.813 9.813 0 01-5.001-1.374l-.359-.213-3.717.975.992-3.617-.234-.371A9.816 9.816 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/>
+          </svg>
+          <span class="relative">Chat WhatsApp Sekarang — {WA_DISPLAY}</span>
+        </a>
+      </div>
+
+      <p class="font-opensans text-sm text-text-light reveal" data-delay="400">
+        Atau hubungi melalui{' '}
+        <a href="/kontak" class="text-medical-trust-light underline hover:text-medical-trust transition-colors">
+          formulir kontak
+        </a>
+      </p>
+
+      <!-- Trust indicators -->
+      <div class="flex flex-wrap justify-center gap-6 mt-10 pt-10 border-t border-clean-cloud-dark reveal" data-delay="500">
+        {[
+          { icon: '🔒', text: 'Konsultasi Privat & Rahasia' },
+          { icon: '💸', text: 'Benar-benar Gratis, Tanpa Syarat' },
+          { icon: '⚡', text: 'Respon dalam 24 Jam' },
+        ].map(item => (
+          <div class="flex items-center gap-2">
+            <span class="text-xl">{item.icon}</span>
+            <span class="font-opensans text-sm text-text-muted">{item.text}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,120 @@
+---
+import { WA_LINK } from '../../../utils/whatsapp';
+
+const credentials = [
+  { icon: '🎓', text: 'Spesialis Paru (Sp.P) — Universitas Indonesia' },
+  { icon: '📋', text: 'Anggota IDI & PDPI (Perhimpunan Dokter Paru Indonesia)' },
+  { icon: '⭐', text: '15+ tahun pengalaman menangani pasien ketergantungan rokok' },
+  { icon: '🏆', text: 'Tersertifikasi Konseling Berhenti Merokok WHO' },
+];
+---
+
+<section class="section-pad bg-clean-cloud bg-dots relative overflow-hidden">
+  <!-- Subtle background dots -->
+  <div class="absolute inset-0 bg-dots opacity-30 pointer-events-none" aria-hidden="true"></div>
+
+  <div class="container-main relative">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Text Content -->
+      <div class="reveal">
+        <span class="section-label">Tim Medis Kami</span>
+        <h2 class="font-lora font-semibold text-medical-trust leading-tight mb-5"
+            style="font-size: clamp(30px, 4vw, 40px);">
+          Di Dampingi Dokter Ahli Berpengalaman
+        </h2>
+        <p class="font-opensans text-text-muted text-lead leading-relaxed mb-8">
+          Tim dokter spesialis paru dan ahli kesehatan berhenti merokok kami siap membantu Anda dengan pendekatan medis yang terbukti efektif dan penuh empati.
+        </p>
+
+        <!-- Credentials list -->
+        <ul class="space-y-4 mb-8" role="list">
+          {credentials.map(c => (
+            <li class="flex items-start gap-3">
+              <span class="text-xl shrink-0">{c.icon}</span>
+              <span class="font-opensans text-text-muted text-sm leading-relaxed">{c.text}</span>
+            </li>
+          ))}
+        </ul>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-3">
+          <a href="/tentang-kami" class="btn-secondary">
+            Kenali Tim Kami
+          </a>
+          <a href="/tentang-kami#sertifikasi"
+             class="inline-flex items-center gap-1.5 font-opensans text-sm text-medical-trust-light hover:text-medical-trust transition-colors underline underline-offset-2">
+            Lihat Sertifikasi
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Doctor Card -->
+      <div class="reveal flex justify-center lg:justify-end" data-delay="200">
+        <div class="card-base w-full max-w-sm overflow-hidden">
+          <!-- Doctor photo placeholder -->
+          <div class="relative bg-gradient-to-br from-medical-trust/10 to-recovery-green/10 h-72 flex items-center justify-center">
+            <!-- SVG Doctor Illustration -->
+            <svg viewBox="0 0 280 280" fill="none" class="w-56 h-56" aria-label="Foto dr. Andi Wijaya Sp.P">
+              <!-- Background circle -->
+              <circle cx="140" cy="140" r="120" fill="rgba(30,58,138,0.06)"/>
+              <!-- White coat / body -->
+              <rect x="75" y="165" width="130" height="120" rx="65" fill="white"/>
+              <rect x="80" y="170" width="120" height="110" rx="60" fill="#F8FAFC"/>
+              <!-- Stethoscope -->
+              <path d="M100 200 Q110 220 130 215 Q150 210 160 195" stroke="#10B981" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <circle cx="160" cy="193" r="8" fill="#10B981"/>
+              <!-- ID badge -->
+              <rect x="115" y="220" width="50" height="30" rx="6" fill="#1E3A8A"/>
+              <text x="140" y="238" fill="white" font-size="8" text-anchor="middle" font-family="sans-serif" font-weight="600">DOKTER</text>
+              <!-- Head -->
+              <circle cx="140" cy="140" r="50" fill="#FBBF24"/>
+              <!-- Hair -->
+              <path d="M90 130 Q140 95 190 130 L190 115 Q140 70 90 115 Z" fill="#1E3A8A"/>
+              <!-- Eyes -->
+              <circle cx="125" cy="135" r="6" fill="white"/>
+              <circle cx="155" cy="135" r="6" fill="white"/>
+              <circle cx="126" cy="136" r="4" fill="#1E3A8A"/>
+              <circle cx="156" cy="136" r="4" fill="#1E3A8A"/>
+              <circle cx="127" cy="135" r="1.5" fill="white"/>
+              <circle cx="157" cy="135" r="1.5" fill="white"/>
+              <!-- Nose -->
+              <path d="M137 145 Q140 150 143 145" stroke="#D97706" stroke-width="1.5" fill="none"/>
+              <!-- Smile -->
+              <path d="M125 158 Q140 168 155 158" stroke="#D97706" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <!-- Green badge -->
+              <circle cx="175" cy="105" r="18" fill="#10B981"/>
+              <text x="175" y="112" fill="white" font-size="20" text-anchor="middle">✓</text>
+            </svg>
+            <!-- Green tag -->
+            <div class="absolute top-4 right-4 bg-recovery-green text-white px-3 py-1 rounded-full text-xs font-nunito font-bold">
+              ✓ Terverifikasi
+            </div>
+          </div>
+
+          <!-- Doctor info -->
+          <div class="p-6">
+            <h3 class="font-nunito font-bold text-medical-trust text-xl mb-1">
+              dr. Andi Wijaya, Sp.P
+            </h3>
+            <p class="font-opensans text-medical-trust-light text-sm font-semibold mb-3">
+              Spesialis Paru & Konsultan Berhenti Merokok
+            </p>
+            <blockquote class="border-l-3 border-recovery-green pl-4 mb-4" style="border-left-width: 3px; border-left-color: #10B981;">
+              <p class="font-lora italic text-text-muted text-sm leading-relaxed">
+                "Setiap perokok berhak mendapat kesempatan untuk hidup lebih sehat. Kami ada untuk mewujudkan itu."
+              </p>
+            </blockquote>
+            <div class="flex items-center gap-3">
+              <span class="badge-pill bg-medical-trust/10 text-medical-trust">15 thn pengalaman</span>
+              <span class="badge-pill bg-recovery-green/10 text-recovery-green-dark">IDI Certified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

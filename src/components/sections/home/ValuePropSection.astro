@@ -1,0 +1,82 @@
+---
+const cards = [
+  {
+    number: '01',
+    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>`,
+    title: 'Konsultasi Online Gratis',
+    desc: 'Chat atau video call langsung dengan dokter ahli spesialis paru tanpa biaya apapun. Tanyakan apa saja tentang kebiasaan merokok Anda.',
+    href: '/layanan',
+    cta: 'Tanya Sekarang',
+  },
+  {
+    number: '02',
+    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`,
+    title: '2x Pertemuan Langsung Gratis',
+    desc: 'Bertemu langsung dengan dokter ahli di klinik untuk evaluasi kesehatan mendalam dan pembuatan rencana berhenti merokok yang personal.',
+    href: '/layanan',
+    cta: 'Daftar Gratis',
+  },
+  {
+    number: '03',
+    icon: `<svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
+    title: 'Program Pendampingan',
+    desc: 'Dukungan jangka panjang dengan sesi follow-up berkala, akses grup support komunitas, dan monitoring kesehatan paru untuk mencegah kambuh.',
+    href: '/layanan',
+    cta: 'Pelajari Program',
+  },
+];
+---
+
+<section class="section-pad bg-white">
+  <div class="container-main">
+    <!-- Section Header -->
+    <div class="text-center mb-14">
+      <span class="section-label reveal">3 Langkah Mudah</span>
+      <h2 class="section-title text-h2 mb-4 reveal" data-delay="100">
+        Mulai Perjalanan Sehat Anda
+      </h2>
+      <p class="section-subtitle text-lead max-w-xl mx-auto reveal" data-delay="200">
+        Kami hadir untuk menemani setiap langkah Anda menuju hidup bebas dari rokok.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {cards.map((card, i) => (
+        <div class={`card-base p-8 lg:p-10 reveal group`} data-delay={String(i * 150)}>
+          <!-- Number badge + Icon -->
+          <div class="flex items-center gap-4 mb-6">
+            <div class="relative">
+              <div class="w-14 h-14 rounded-2xl bg-medical-trust flex items-center justify-center
+                          group-hover:bg-recovery-green transition-colors duration-300 shadow-md"
+                   set:html={card.icon}>
+              </div>
+              <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-recovery-green text-white
+                           font-nunito font-bold text-xs flex items-center justify-center shadow-sm">
+                {card.number}
+              </span>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <h3 class="font-nunito font-bold text-medical-trust text-h4 mb-3 leading-tight">
+            {card.title}
+          </h3>
+          <p class="font-opensans text-text-muted text-sm-body leading-relaxed mb-6">
+            {card.desc}
+          </p>
+
+          <!-- CTA Link -->
+          <a href={card.href}
+             class="inline-flex items-center gap-2 font-nunito font-semibold text-recovery-green text-caption
+                    hover:gap-3 transition-all duration-200">
+            {card.cta}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

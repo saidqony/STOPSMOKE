@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Newsreader:opsz,ital,wght@6..72,0,400;6..72,0,600;6..72,1,400&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-background": "#1a1b21",
+                "on-primary": "#ffffff",
+                "primary-fixed-dim": "#b6c4ff",
+                "surface-container-lowest": "#ffffff",
+                "background": "#faf8ff",
+                "inverse-on-surface": "#f1f0f7",
+                "surface-bright": "#faf8ff",
+                "recovery-green-light": "#34D399",
+                "surface-variant": "#e3e1e9",
+                "tertiary-fixed": "#ffdbcb",
+                "on-tertiary-fixed": "#341100",
+                "outline": "#757682",
+                "on-tertiary": "#ffffff",
+                "surface-container-highest": "#e3e1e9",
+                "surface-container": "#eeedf4",
+                "primary": "#00236f",
+                "secondary-fixed-dim": "#4edea3",
+                "primary-container": "#1e3a8a",
+                "clean-cloud-dark": "#E2E8F0",
+                "tertiary": "#4b1c00",
+                "clean-cloud": "#F8FAFC",
+                "secondary": "#006c49",
+                "on-surface-variant": "#444651",
+                "on-secondary": "#ffffff",
+                "on-surface": "#1a1b21",
+                "tertiary-fixed-dim": "#ffb691",
+                "on-secondary-fixed": "#002113",
+                "on-secondary-container": "#00714d",
+                "surface-tint": "#4059aa",
+                "outline-variant": "#c5c5d3",
+                "surface-container-high": "#e9e7ef",
+                "inverse-surface": "#2f3036",
+                "inverse-primary": "#b6c4ff",
+                "surface-dim": "#dad9e1",
+                "on-error": "#ffffff",
+                "surface": "#faf8ff",
+                "on-tertiary-container": "#f39461",
+                "surface-card": "#FFFFFF",
+                "secondary-fixed": "#6ffbbe",
+                "on-tertiary-fixed-variant": "#773205",
+                "on-primary-fixed": "#00164e",
+                "error": "#ba1a1a",
+                "secondary-container": "#6cf8bb",
+                "error-container": "#ffdad6",
+                "surface-container-low": "#f4f3fa",
+                "medical-trust-light": "#3B82F6",
+                "text-primary": "#1E3A8A",
+                "on-secondary-fixed-variant": "#005236",
+                "on-error-container": "#93000a",
+                "medical-trust-dark": "#0F172A",
+                "text-body": "#334155",
+                "text-muted": "#64748B",
+                "primary-fixed": "#dce1ff",
+                "on-primary-container": "#90a8ff",
+                "recovery-green-dark": "#059669",
+                "tertiary-container": "#6e2c00",
+                "on-primary-fixed-variant": "#264191"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "12px",
+                "xl": "20px",
+                "full": "9999px"
+            },
+            "spacing": {
+                "xs": "4px",
+                "2xl": "48px",
+                "md": "16px",
+                "lg": "24px",
+                "xl": "32px",
+                "4xl": "80px",
+                "sm": "8px",
+                "3xl": "64px",
+                "5xl": "100px",
+                "container-max": "1200px"
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .font-h1-hero { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 52px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 700; }
+        .font-h1-medical { font-family: 'Newsreader', serif; font-size: 48px; line-height: 1.3; font-weight: 600; }
+        .font-h2-section { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 40px; line-height: 1.2; font-weight: 700; }
+        .font-h3-card { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 28px; line-height: 1.2; font-weight: 700; }
+        .font-body-lead { font-family: 'Noto Serif', serif; font-size: 18px; line-height: 1.7; font-weight: 400; }
+        .font-body-standard { font-family: 'Noto Serif', serif; font-size: 16px; line-height: 1.7; font-weight: 400; }
+        .font-label-ui { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; line-height: 1.4; font-weight: 600; }
+        .font-quote { font-family: 'Newsreader', serif; font-size: 22px; line-height: 1.4; font-weight: 400; }
+
+        .glass-nav {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .card-shadow:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+        }
+
+        .whatsapp-pulse {
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+    </style>
+</head>
+<body class="bg-clean-cloud text-on-surface selection:bg-recovery-green-light/30">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 border-b border-slate-200 bg-slate-50/80 backdrop-blur-md shadow-sm">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+<div class="text-2xl font-serif font-bold text-blue-900">StopSmoking MD</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-ui text-slate-600 hover:text-emerald-500 transition-all duration-300" href="#">Programs</a>
+<a class="font-label-ui text-slate-600 hover:text-emerald-500 transition-all duration-300" href="#">Specialists</a>
+<a class="font-label-ui text-emerald-600 border-b-2 border-emerald-500 pb-1" href="#">Success Stories</a>
+<a class="font-label-ui text-slate-600 hover:text-emerald-500 transition-all duration-300" href="#">Clinics</a>
+</nav>
+<button class="bg-secondary text-on-primary px-6 py-3 rounded-xl font-label-ui whatsapp-pulse flex items-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="chat" data-weight="fill">chat</span>
+                WhatsApp Consultation
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="py-5xl bg-white border-b border-clean-cloud-dark">
+<div class="max-w-[1200px] mx-auto px-lg text-center">
+<span class="inline-block py-1 px-4 rounded-full bg-secondary-container text-on-secondary-container font-label-ui mb-md uppercase tracking-wider">Pusat Pengetahuan</span>
+<h1 class="font-h1-medical text-primary mb-lg">Wawasan untuk Perjalanan Sehat Anda</h1>
+<p class="font-body-lead text-text-muted max-w-2xl mx-auto">
+                    Kumpulan artikel medis, tips pemulihan, dan cerita inspiratif untuk mendukung langkah Anda berhenti merokok selamanya.
+                </p>
+</div>
+</section>
+<!-- Featured Article Section -->
+<section class="py-3xl">
+<div class="max-w-[1200px] mx-auto px-lg">
+<div class="relative group overflow-hidden rounded-xl bg-white card-shadow flex flex-col lg:flex-row items-stretch">
+<div class="lg:w-3/5 relative overflow-hidden">
+<img alt="Featured Medical Article" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a doctor explaining medical data on a tablet in a bright clinical office with warm lighting and soft background bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxhRWC4vHeUwXGUulS3huKvR2mCXuqpatxFL__VdgV3iBAT9sb6GUXaojcn8JGNo04DNkKqJX3cLcIBI-z1qZJy3xu_EAz_WHpBzoHiOPyVJ4Mfr0OcxmVMwF4KHU-fXPf-icJ82yGwib6_FpncOmCR4t_kdchop_Uprgsm2Wnc0qo90sdxVV3yOePC9TLVVdZ3qRa_SjlV4p7BLBTYJMtAcJzK72Z-AHo0Zaa5RqbdAJr-1sCphr8yqnmxQwt_Qdvod-98bHdiqA"/>
+<div class="absolute top-md left-md">
+<span class="bg-primary text-on-primary font-label-ui px-4 py-2 rounded-lg shadow-lg">UNGGULAN</span>
+</div>
+</div>
+<div class="lg:w-2/5 p-xl flex flex-col justify-center">
+<span class="text-recovery-green-dark font-label-ui mb-sm">Panduan Medis</span>
+<h2 class="font-h3-card text-primary mb-md">Sains di Balik Ketergantungan Nikotin dan Cara Memutus Rantainya</h2>
+<p class="font-body-standard text-text-body mb-lg">
+                            Memahami mekanisme dopamin di otak dapat membantu Anda mempersiapkan strategi yang lebih efektif dalam menghadapi fase withdrawal.
+                        </p>
+<div class="flex items-center gap-md">
+<img alt="Author" class="w-10 h-10 rounded-full border-2 border-clean-cloud-dark" data-alt="Professional headshot of a smiling middle-aged male doctor wearing a white clinical coat and stethoscope" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGsFunOsEkmsb5AFRMhrbLFsOG9mpddZfPReg3F8zMkYgFeyu4nrYJV1v_nwoptQWzm6fnXCb_meCA-uakYiEa65BE8IS_c7SOHs3Gvp8qOkOaM4_WcduaBfU_Fbu6zeYXU6cMJNhm393R9xn2NPr_LpoUNNZoiz5qE2m5hdS-7zTLEyYp2Hm5CbCihuiLASdkOU-jqk9m8OdcZAl5ADohB7n9h3cbtXZZ4xdH2u-FDPRfpsmU5lEAu63wctJFN1XkdLsRIhyyB8g"/>
+<div>
+<p class="font-label-ui text-on-surface">Dr. Adrian Pratama</p>
+<p class="text-xs text-text-muted">Spesialis Paru • 12 Min Baca</p>
+</div>
+</div>
+<a class="mt-lg flex items-center text-secondary font-label-ui group/link" href="#">
+                            Baca Selengkapnya
+                            <span class="material-symbols-outlined ml-xs transition-transform group-hover/link:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Filters & Search -->
+<section class="py-md bg-clean-cloud sticky top-20 z-40 border-b border-clean-cloud-dark/50 glass-nav">
+<div class="max-w-[1200px] mx-auto px-lg flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="flex items-center gap-sm overflow-x-auto pb-xs md:pb-0 scrollbar-hide">
+<button class="bg-primary text-on-primary font-label-ui px-6 py-2 rounded-full whitespace-nowrap">Semua</button>
+<button class="bg-white border border-clean-cloud-dark text-text-body hover:border-primary font-label-ui px-6 py-2 rounded-full whitespace-nowrap transition-colors">Kesehatan Paru</button>
+<button class="bg-white border border-clean-cloud-dark text-text-body hover:border-primary font-label-ui px-6 py-2 rounded-full whitespace-nowrap transition-colors">Tips Harian</button>
+<button class="bg-white border border-clean-cloud-dark text-text-body hover:border-primary font-label-ui px-6 py-2 rounded-full whitespace-nowrap transition-colors">Nutrisi</button>
+<button class="bg-white border border-clean-cloud-dark text-text-body hover:border-primary font-label-ui px-6 py-2 rounded-full whitespace-nowrap transition-colors">Psikologi</button>
+</div>
+<div class="relative min-w-[300px]">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-text-muted" data-icon="search">search</span>
+<input class="w-full pl-xl pr-md py-3 rounded-xl border border-clean-cloud-dark focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-label-ui" placeholder="Cari artikel..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Article Grid -->
+<section class="py-3xl">
+<div class="max-w-[1200px] mx-auto px-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<article class="bg-white rounded-xl overflow-hidden card-shadow flex flex-col">
+<div class="aspect-video relative">
+<img alt="Article Thumbnail" class="w-full h-full object-cover" data-alt="Fresh green apples and a glass of water on a clean wooden table with bright morning sunlight streaming through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIR1q3dO7uh8aYptqT-mHDut_M4WPORAueuKo85pHp0NLlJMZpbYTTFfFOUFKzSGKvMRtKsAgJ1aCCw2d5mrc_YqUTDJep5PSwQAC-xq7pF9C4oPlQn3oqmHhvOE7BLGAGI3AND6TpGf2vhkGeYxtXnkAmoelkMcLd1U_mJAw0-CNU3IL6upmbCYkJEBX-a9skflVM0dsGZMKYiVGgzPE81-nxyqAWmq4DJNxOe5YyTKd2euhV5S3WcOuyvGLf3aUsbmuPzKVgRQI"/>
+<span class="absolute bottom-md left-md bg-white/90 backdrop-blur-sm text-secondary font-label-ui px-3 py-1 rounded-lg text-xs">Nutrisi</span>
+</div>
+<div class="p-lg flex flex-col flex-grow">
+<h3 class="font-h3-card text-lg mb-sm line-clamp-2 leading-tight">5 Makanan yang Membantu Mengurangi Keinginan Merokok</h3>
+<p class="font-body-standard text-sm text-text-body mb-lg line-clamp-3">
+                                Ternyata beberapa jenis sayuran dan buah-buahan tertentu dapat mengubah rasa rokok menjadi tidak enak bagi lidah kita.
+                            </p>
+<div class="mt-auto flex items-center justify-between pt-md border-t border-clean-cloud">
+<span class="text-xs text-text-muted font-label-ui">Mei 24, 2024</span>
+<a class="text-secondary font-label-ui text-sm flex items-center hover:underline" href="#">
+                                    Detail <span class="material-symbols-outlined text-sm ml-xs" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-white rounded-xl overflow-hidden card-shadow flex flex-col">
+<div class="aspect-video relative">
+<img alt="Article Thumbnail" class="w-full h-full object-cover" data-alt="A person practicing deep breathing exercises in a serene outdoor setting with lush greenery and soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfmO4cJaDkrpUvu5JRtzVMHYbE4v_fYRnDbzF3ttpIUEdZFSHhR6f47JT6cTGZoAqlT1EXj3Ia00DhzUjlF81yKGWrBPSYzqXfUGlMqQDju7BSYKECCcxNOOGjwVlMb6Bq0UxpWwbBUEpa_wUhnQGF34T_-tqkSw7kfFc6t7hz1tW1KSKeTcjJTjir_ViTBUVgQCbjEp99bf3uJQgT36LlLpoIFM-R20eyUbZyfLas0RA11Of5UMMpTi9NVfy7PwYY3X1pERuhIEM"/>
+<span class="absolute bottom-md left-md bg-white/90 backdrop-blur-sm text-secondary font-label-ui px-3 py-1 rounded-lg text-xs">Psikologi</span>
+</div>
+<div class="p-lg flex flex-col flex-grow">
+<h3 class="font-h3-card text-lg mb-sm line-clamp-2 leading-tight">Mengelola Stress Tanpa Rokok: Teknik Meditasi 5 Menit</h3>
+<p class="font-body-standard text-sm text-text-body mb-lg line-clamp-3">
+                                Stres sering kali menjadi pemicu utama relaps. Pelajari bagaimana menenangkan pikiran secara instan melalui teknik pernapasan.
+                            </p>
+<div class="mt-auto flex items-center justify-between pt-md border-t border-clean-cloud">
+<span class="text-xs text-text-muted font-label-ui">Mei 20, 2024</span>
+<a class="text-secondary font-label-ui text-sm flex items-center hover:underline" href="#">
+                                    Detail <span class="material-symbols-outlined text-sm ml-xs" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-white rounded-xl overflow-hidden card-shadow flex flex-col">
+<div class="aspect-video relative">
+<img alt="Article Thumbnail" class="w-full h-full object-cover" data-alt="An anatomical illustration of healthy lungs glowing with a soft blue light against a clean clinical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY5V6wnM2tZIg9AnDp5CB0sS3a140DwYXFe8JT8nomDMy_alPw5lNW2zF-8pXsPiAzSdjRNO5PprCenVhaE_kWE5lTVpwK4cQek9VI84IfmsTPGgUUCu44zAuB53gpNLY_yfvdzQaLeamnAtQlypGAb5WJ1WZWnW1-I9qY3x_Qfyu_7_Ad4pBFqb3kgHiSmm4Ztsz5Fkh4sYW1LW3bkVSpJsRV7mY5KMvjhjLWWjCwcvXlbcLw1Bc4ES-PJA_NO29T3BB6t0TNDi8"/>
+<span class="absolute bottom-md left-md bg-white/90 backdrop-blur-sm text-secondary font-label-ui px-3 py-1 rounded-lg text-xs">Kesehatan Paru</span>
+</div>
+<div class="p-lg flex flex-col flex-grow">
+<h3 class="font-h3-card text-lg mb-sm line-clamp-2 leading-tight">Apa yang Terjadi pada Paru-paru 24 Jam Setelah Berhenti?</h3>
+<p class="font-body-standard text-sm text-text-body mb-lg line-clamp-3">
+                                Tubuh manusia memiliki kemampuan regenerasi yang luar biasa. Ketahui proses pemulihan paru-paru Anda sejak jam pertama.
+                            </p>
+<div class="mt-auto flex items-center justify-between pt-md border-t border-clean-cloud">
+<span class="text-xs text-text-muted font-label-ui">Mei 15, 2024</span>
+<a class="text-secondary font-label-ui text-sm flex items-center hover:underline" href="#">
+                                    Detail <span class="material-symbols-outlined text-sm ml-xs" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-white rounded-xl overflow-hidden card-shadow flex flex-col">
+<div class="aspect-video relative">
+<img alt="Article Thumbnail" class="w-full h-full object-cover" data-alt="A small piggy bank filled with gold coins sitting on a desk next to a stethoscope and a medical chart" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV6RoCC5K3387MyEYXtLSP1cnBVGdIKtMSdf2lwGemfdL02oG2Rk11ko74c0pD5nLCJFk4buAYhKcY0wKV4DabmZJmtUCn22KnkcJq5ziP-IT1V8DsA-KeViKRA-KCqbLbIDWKisn03WZeORGWGny6b88Q6DqUdVttu61FjaDH-lFIi9ziIji0RALGJx5zLcvjKhxcUTKJV5OpQX2XoFeZxMQU70iNbb8BdXHikwCR6nF5LXDezgQIsAdVThsQRr-VRilLTtX0BKQ"/>
+<span class="absolute bottom-md left-md bg-white/90 backdrop-blur-sm text-secondary font-label-ui px-3 py-1 rounded-lg text-xs">Tips Harian</span>
+</div>
+<div class="p-lg flex flex-col flex-grow">
+<h3 class="font-h3-card text-lg mb-sm line-clamp-2 leading-tight">Menghitung Keuntungan Finansial Berhenti Merokok Setahun</h3>
+<p class="font-body-standard text-sm text-text-body mb-lg line-clamp-3">
+                                Selain kesehatan, dompet Anda akan sangat berterima kasih. Mari kita hitung berapa banyak yang bisa Anda tabung.
+                            </p>
+<div class="mt-auto flex items-center justify-between pt-md border-t border-clean-cloud">
+<span class="text-xs text-text-muted font-label-ui">Mei 10, 2024</span>
+<a class="text-secondary font-label-ui text-sm flex items-center hover:underline" href="#">
+                                    Detail <span class="material-symbols-outlined text-sm ml-xs" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="bg-white rounded-xl overflow-hidden card-shadow flex flex-col">
+<div class="aspect-video relative">
+<img alt="Article Thumbnail" class="w-full h-full object-cover" data-alt="A group of diverse people sitting in a circle sharing stories in a warm community center with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcwSyjG8M8e5oDJ15BE7QjgfNtQGlYx1sRL6-KUH1jZGtTCQVQHxL-ErXMgs2Z2EV15Q7ra8n8P077DtDGOhf7_MWidYAxwyi_PwMdBJSbAVXcONgjHp3KOT5qZBWJ9iR8Qg5qTFKKLenFFw8dMIygEo70J9EeyfUL82N7eWgvhNFdC4YM3zjNLQkWWJdfyOaOWAWH1UGt7OhLnyYso9ZnEhkluiXDMuhlah6CEuoK8DT4JWsWYvqWGN1QaJ7e2djp7NVtQB-Ipa0"/>
+<span class="absolute bottom-md left-md bg-white/90 backdrop-blur-sm text-secondary font-label-ui px-3 py-1 rounded-lg text-xs">Psikologi</span>
+</div>
+<div class="p-lg flex flex-col flex-grow">
+<h3 class="font-h3-card text-lg mb-sm line-clamp-2 leading-tight">Pentingnya Dukungan Sosial dalam Proses Pemulihan</h3>
+<p class="font-body-standard text-sm text-text-body mb-lg line-clamp-3">
+                                Berjalan sendirian itu sulit. Membangun sistem pendukung di sekitar Anda adalah kunci kesuksesan jangka panjang.
+                            </p>
+<div class="mt-auto flex items-center justify-between pt-md border-t border-clean-cloud">
+<span class="text-xs text-text-muted font-label-ui">Mei 05, 2024</span>
+<a class="text-secondary font-label-ui text-sm flex items-center hover:underline" href="#">
+                                    Detail <span class="material-symbols-outlined text-sm ml-xs" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="bg-white rounded-xl overflow-hidden card-shadow flex flex-col">
+<div class="aspect-video relative">
+<img alt="Article Thumbnail" class="w-full h-full object-cover" data-alt="A modern glass of water with lemon slices and mint leaves on a white table in a bright minimalist room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEv01Kx5vLAfX10a8fWuTlJAXH1XmwJbV1MtRK0c0avdUALZlmt4k8bLPQM4BQXVO1M3jDEcuO1uzbWEWGFxKRRUzRm48nJAYiZb4lXLqrqZvAdr0lsgGffoFTjF5W_IVpZ0_L4qArWZqIKQclGMTcE1qOy6wfzlLfMJLNWXsu3_NTVKCi7xLSRIx7D-d3svmHcttQgL49r1m9D6vJRArf9QUUa8Bc3HvWlvMA4E4beZSV8nrgkqJfhRiQ7-fMaH9B1Oy1d3zeMdw"/>
+<span class="absolute bottom-md left-md bg-white/90 backdrop-blur-sm text-secondary font-label-ui px-3 py-1 rounded-lg text-xs">Nutrisi</span>
+</div>
+<div class="p-lg flex flex-col flex-grow">
+<h3 class="font-h3-card text-lg mb-sm line-clamp-2 leading-tight">Hidrasi dan Detoksifikasi: Peran Air dalam Mengeluarkan Nikotin</h3>
+<p class="font-body-standard text-sm text-text-body mb-lg line-clamp-3">
+                                Mempercepat proses pembersihan tubuh dengan pola hidrasi yang benar selama minggu-minggu kritis pertama.
+                            </p>
+<div class="mt-auto flex items-center justify-between pt-md border-t border-clean-cloud">
+<span class="text-xs text-text-muted font-label-ui">Mei 01, 2024</span>
+<a class="text-secondary font-label-ui text-sm flex items-center hover:underline" href="#">
+                                    Detail <span class="material-symbols-outlined text-sm ml-xs" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-3xl text-center">
+<button class="px-8 py-4 border-2 border-primary text-primary font-label-ui rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-300 active:scale-95">
+                        Muat Lebih Banyak
+                    </button>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-5xl bg-primary text-on-primary relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-secondary rounded-full opacity-20 blur-3xl"></div>
+<div class="absolute -left-20 -bottom-20 w-64 h-64 bg-medical-trust-light rounded-full opacity-10 blur-3xl"></div>
+<div class="max-w-[800px] mx-auto px-lg text-center relative z-10">
+<h2 class="font-h2-section mb-md">Berlangganan Tips Mingguan</h2>
+<p class="font-body-lead opacity-90 mb-xl">Dapatkan wawasan medis dan motivasi langsung di inbox Anda setiap Senin pagi.</p>
+<form class="flex flex-col sm:flex-row gap-md">
+<input class="flex-grow px-lg py-4 rounded-xl bg-white/10 border border-white/20 text-on-primary placeholder:text-white/50 focus:bg-white/20 outline-none transition-all font-label-ui" placeholder="Alamat email Anda" type="email"/>
+<button class="bg-secondary px-lg py-4 rounded-xl font-label-ui text-on-primary hover:bg-secondary/90 transition-colors shadow-lg" type="submit">Berlangganan Sekarang</button>
+</form>
+<p class="mt-md text-xs opacity-60">Kami menghargai privasi Anda. Berhenti berlangganan kapan saja.</p>
+</div>
+</section>
+</main>
+<!-- Floating WhatsApp FAB -->
+<div class="fixed bottom-lg right-lg z-50">
+<div class="absolute -top-12 right-0 bg-white shadow-xl px-4 py-2 rounded-lg text-sm font-label-ui text-primary whitespace-nowrap mb-2 hidden md:block">
+            Butuh bantuan? Chat kami
+            <div class="absolute right-6 -bottom-2 w-4 h-4 bg-white rotate-45"></div>
+</div>
+<button class="w-16 h-16 bg-secondary text-on-primary rounded-full shadow-2xl flex items-center justify-center whatsapp-pulse group transition-transform hover:scale-110 active:scale-90">
+<span class="material-symbols-outlined text-3xl" data-icon="chat" data-weight="fill">chat</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 bg-slate-50">
+<div class="max-w-7xl mx-auto px-8 py-16 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-serif font-bold text-blue-900">StopSmoking MD</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 transition-all hover:underline" href="#">Medical Disclaimer</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 transition-all hover:underline" href="#">Privacy Policy</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 transition-all hover:underline" href="#">Terms of Service</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 transition-all hover:underline" href="#">Patient Rights</a>
+</nav>
+<div class="font-sans text-sm text-slate-500 text-center md:text-right">
+                © 2024 Medical Trust Stop Smoking Clinic. Certified Clinical Care.
+            </div>
+</div>
+</footer>
+</body></html>

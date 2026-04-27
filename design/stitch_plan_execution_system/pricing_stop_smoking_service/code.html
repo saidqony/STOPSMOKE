@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(.33); opacity: 0; }
+            80%, 100% { opacity: 0; }
+        }
+        .whatsapp-pulse::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: inherit;
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1b21",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#faf8ff",
+                        "inverse-on-surface": "#f1f0f7",
+                        "surface-bright": "#faf8ff",
+                        "recovery-green-light": "#34D399",
+                        "surface-variant": "#e3e1e9",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-tertiary-fixed": "#341100",
+                        "outline": "#757682",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e3e1e9",
+                        "surface-container": "#eeedf4",
+                        "primary": "#00236f",
+                        "secondary-fixed-dim": "#4edea3",
+                        "primary-container": "#1e3a8a",
+                        "clean-cloud-dark": "#E2E8F0",
+                        "tertiary": "#4b1c00",
+                        "clean-cloud": "#F8FAFC",
+                        "secondary": "#006c49",
+                        "on-surface-variant": "#444651",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1b21",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "on-secondary-fixed": "#002113",
+                        "on-secondary-container": "#00714d",
+                        "surface-tint": "#4059aa",
+                        "outline-variant": "#c5c5d3",
+                        "surface-container-high": "#e9e7ef",
+                        "inverse-surface": "#2f3036",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-dim": "#dad9e1",
+                        "on-error": "#ffffff",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#f39461",
+                        "surface-card": "#FFFFFF",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "on-primary-fixed": "#00164e",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#6cf8bb",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f4f3fa",
+                        "medical-trust-light": "#3B82F6",
+                        "text-primary": "#1E3A8A",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-error-container": "#93000a",
+                        "medical-trust-dark": "#0F172A",
+                        "text-body": "#334155",
+                        "text-muted": "#64748B",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-container": "#90a8ff",
+                        "recovery-green-dark": "#059669",
+                        "tertiary-container": "#6e2c00",
+                        "on-primary-fixed-variant": "#264191"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "12px",
+                        "3xl": "20px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "4xl": "80px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "5xl": "100px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "h3-card": ["Plus Jakarta Sans", "sans-serif"],
+                        "body-standard": ["Noto Serif", "serif"],
+                        "h2-section": ["Plus Jakarta Sans", "sans-serif"],
+                        "h1-hero": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-ui": ["Plus Jakarta Sans", "sans-serif"],
+                        "quote": ["Newsreader", "serif"],
+                        "h1-medical": ["Newsreader", "serif"],
+                        "body-lead": ["Noto Serif", "serif"]
+                    },
+                    "fontSize": {
+                        "h3-card": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-standard": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "h2-section": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "h1-hero": ["52px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-ui": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "quote": ["22px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "h1-medical": ["48px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lead": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-standard">
+<!-- Top Navigation Shell -->
+<nav class="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 w-full z-50 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+<div class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-400">StopSmoking MD</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 hover:text-emerald-500 font-jakarta transition-all duration-300 text-label-ui font-label-ui" href="#">Programs</a>
+<a class="text-slate-600 hover:text-emerald-500 font-jakarta transition-all duration-300 text-label-ui font-label-ui" href="#">Specialists</a>
+<a class="text-slate-600 hover:text-emerald-500 font-jakarta transition-all duration-300 text-label-ui font-label-ui" href="#">Success Stories</a>
+<a class="text-slate-600 hover:text-emerald-500 font-jakarta transition-all duration-300 text-label-ui font-label-ui" href="#">Clinics</a>
+</div>
+<button class="bg-secondary text-on-primary px-lg py-md rounded-xl font-label-ui text-label-ui flex items-center gap-2 hover:bg-recovery-green-dark transition-all scale-95 active:scale-90 shadow-md">
+<span class="material-symbols-outlined text-sm">chat</span>
+                WhatsApp Consultation
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-5xl pb-3xl overflow-hidden bg-clean-cloud">
+<div class="max-w-[1200px] mx-auto px-8 text-center relative z-10">
+<span class="inline-block py-2 px-4 rounded-full bg-secondary-container text-on-secondary-container font-label-ui text-label-ui mb-lg">Struktur Harga Kami</span>
+<h1 class="font-h1-medical text-h1-medical text-text-primary mb-md">Transparansi adalah Komitmen Kami</h1>
+<p class="font-body-lead text-body-lead text-text-muted max-w-2xl mx-auto mb-2xl">Investasikan masa depan kesehatan Anda dengan pilihan paket yang dirancang untuk mendukung perjalanan berhenti merokok Anda.</p>
+</div>
+<div class="absolute inset-0 opacity-5 pointer-events-none">
+<div class="absolute -top-20 -left-20 w-96 h-96 bg-recovery-green-light rounded-full blur-3xl"></div>
+<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-medical-trust-light rounded-full blur-3xl"></div>
+</div>
+</header>
+<!-- Comparison Section -->
+<section class="py-5xl bg-surface">
+<div class="max-w-[1200px] mx-auto px-8">
+<div class="grid md:grid-cols-2 gap-xl">
+<!-- Paket Gratis Card -->
+<div class="bg-surface-card rounded-3xl p-xl shadow-sm border-2 border-secondary relative overflow-hidden transition-all hover:shadow-xl hover:-translate-y-2">
+<div class="absolute top-0 right-0 bg-secondary text-on-primary px-lg py-1 rounded-bl-xl font-label-ui text-xs">PILIHAN AWAL</div>
+<h3 class="font-h3-card text-h3-card text-text-primary mb-sm">Paket Gratis</h3>
+<p class="text-text-muted mb-xl font-body-standard">Sempurna untuk langkah pertama Anda menuju pemulihan.</p>
+<div class="mb-2xl">
+<span class="text-h1-hero font-h1-hero text-text-primary">Rp 0</span>
+<span class="text-text-muted">/ selamanya</span>
+</div>
+<ul class="space-y-md mb-2xl">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-standard text-text-body">2x Sesi Konsultasi Awal</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-standard text-text-body">Akses E-book "Healthy Lungs"</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-standard text-text-body">Grup Komunitas WhatsApp</span>
+</li>
+</ul>
+<button class="w-full py-md border-2 border-secondary text-secondary rounded-xl font-label-ui hover:bg-secondary hover:text-on-primary transition-all">Mulai Sekarang</button>
+</div>
+<!-- Paket Premium Card -->
+<div class="bg-surface-card rounded-3xl p-xl shadow-sm border border-clean-cloud-dark transition-all hover:shadow-xl hover:-translate-y-2">
+<h3 class="font-h3-card text-h3-card text-text-primary mb-sm">Paket Premium</h3>
+<p class="text-text-muted mb-xl font-body-standard">Program intensif dengan pendampingan medis penuh.</p>
+<div class="mb-2xl">
+<span class="text-h1-hero font-h1-hero text-text-primary">Rp 1.499.000</span>
+<span class="text-text-muted">/ program</span>
+</div>
+<ul class="space-y-md mb-2xl">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-standard text-text-body">Konsultasi Medis Tak Terbatas</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-standard text-text-body">Obat &amp; Terapi Pendukung</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-standard text-text-body">Cek Kesehatan Paru Lengkap</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-standard text-text-body">Garansi Pendampingan 6 Bulan</span>
+</li>
+</ul>
+<button class="w-full py-md bg-primary text-on-primary rounded-xl font-label-ui hover:bg-primary-container transition-all">Pilih Program Ini</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Detail Cards for Free Meetings -->
+<section class="py-5xl bg-clean-cloud">
+<div class="max-w-[1200px] mx-auto px-8">
+<div class="text-center mb-4xl">
+<h2 class="font-h2-section text-h2-section text-text-primary mb-md">Apa yang Anda dapatkan di 2 Sesi Gratis?</h2>
+<p class="font-body-lead text-body-lead text-text-muted">Langkah awal yang transparan tanpa kewajiban finansial apa pun.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-xl">
+<div class="bg-surface-card p-xl rounded-3xl shadow-sm flex items-start gap-lg border border-clean-cloud-dark">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-3xl">medical_services</span>
+</div>
+<div>
+<h4 class="font-h3-card text-[22px] text-text-primary mb-sm">Sesi 1: Asesmen Ketergantungan</h4>
+<p class="font-body-standard text-text-body">Konsultasi 30 menit dengan dokter spesialis untuk menilai tingkat nikotin dalam tubuh dan riwayat kesehatan Anda.</p>
+</div>
+</div>
+<div class="bg-surface-card p-xl rounded-3xl shadow-sm flex items-start gap-lg border border-clean-cloud-dark">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-3xl">psychology</span>
+</div>
+<div>
+<h4 class="font-h3-card text-[22px] text-text-primary mb-sm">Sesi 2: Rencana Strategis Personal</h4>
+<p class="font-body-standard text-text-body">Penyusunan peta jalan (roadmap) khusus yang disesuaikan dengan gaya hidup Anda untuk mulai mengurangi asupan tembakau.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Important Notes Disclaimer -->
+<section class="py-5xl bg-surface">
+<div class="max-w-[1200px] mx-auto px-8">
+<div class="bg-primary/5 rounded-3xl p-xl border border-primary-fixed-dim">
+<div class="flex items-center gap-md mb-lg">
+<span class="material-symbols-outlined text-primary text-3xl">info</span>
+<h2 class="font-h3-card text-h3-card text-text-primary">Catatan Penting Layanan</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-xl">
+<div class="space-y-md">
+<div class="flex gap-3">
+<span class="text-primary font-bold">•</span>
+<p class="font-body-standard text-text-body text-sm">Paket Gratis hanya berlaku untuk pasien baru yang belum pernah terdaftar di database StopSmoking MD.</p>
+</div>
+<div class="flex gap-3">
+<span class="text-primary font-bold">•</span>
+<p class="font-body-standard text-text-body text-sm">Sesi konsultasi gratis dilakukan secara daring (online) melalui platform telemedis kami yang aman.</p>
+</div>
+</div>
+<div class="space-y-md">
+<div class="flex gap-3">
+<span class="text-primary font-bold">•</span>
+<p class="font-body-standard text-text-body text-sm">Biaya Paket Premium dapat dicicil hingga 3 kali tanpa bunga (S&amp;K berlaku sesuai bank mitra).</p>
+</div>
+<div class="flex gap-3">
+<span class="text-primary font-bold">•</span>
+<p class="font-body-standard text-text-body text-sm">Semua tindakan medis dan pemberian obat diawasi langsung oleh tenaga medis bersertifikat nasional.</p>
+</div>
+</div>
+</div>
+<div class="mt-xl pt-lg border-t border-primary/10">
+<p class="font-jakarta text-xs text-text-muted italic">Medical Disclaimer: Informasi harga dan layanan dapat berubah sewaktu-waktu sesuai dengan kebijakan regulasi medis lokal. Konsultasi bukan merupakan pengganti diagnosis medis darurat.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-serif font-bold text-blue-900 dark:text-blue-400 text-xl">StopSmoking MD</div>
+<p class="font-sans text-sm text-slate-500 dark:text-slate-400">© 2024 Medical Trust Stop Smoking Clinic. Certified Clinical Care.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-blue-900 font-jakarta text-sm transition-all hover:underline" href="#">Medical Disclaimer</a>
+<a class="text-slate-500 hover:text-blue-900 font-jakarta text-sm transition-all hover:underline" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-blue-900 font-jakarta text-sm transition-all hover:underline" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-blue-900 font-jakarta text-sm transition-all hover:underline" href="#">Patient Rights</a>
+</div>
+</div>
+</footer>
+<!-- Floating WhatsApp CTA -->
+<div class="fixed bottom-lg right-lg z-50 group">
+<div class="absolute right-full mr-md bg-white px-md py-sm rounded-lg shadow-lg text-sm font-label-ui text-text-primary whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none mb-2">
+            Butuh bantuan memilih? Chat kami
+        </div>
+<button class="w-16 h-16 bg-secondary text-on-primary rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform whatsapp-pulse relative">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+</button>
+</div>
+</body></html>

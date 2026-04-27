@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import { WA_LINK } from '../utils/whatsapp';
+
+const doctors = [
+  {
+    name: 'dr. Andi Wijaya, Sp.P',
+    title: 'Spesialis Paru & Konsultan Berhenti Merokok',
+    experience: '15 tahun',
+    bio: 'Lulusan FK UI dengan spesialisasi paru, dr. Andi telah membantu ratusan pasien berhenti merokok melalui pendekatan medis berbasis bukti.',
+    initial: 'A',
+    color: 'from-medical-trust/20 to-recovery-green/10',
+    badges: ['IDI Certified', 'PDPI Member', 'WHO Cessation'],
+  },
+  {
+    name: 'dr. Budi Santosa, Sp.KK',
+    title: 'Spesialis Kesehatan Masyarakat',
+    experience: '12 tahun',
+    bio: 'Ahli epidemiologi kesehatan dengan fokus pada program pencegahan penyakit akibat rokok di level komunitas dan klinik.',
+    initial: 'B',
+    color: 'from-recovery-green/10 to-medical-trust/10',
+    badges: ['Sp.KK Certified', 'IDI Member', 'Public Health'],
+  },
+  {
+    name: 'dr. Citra Maharani',
+    title: 'Dokter Umum & Konselor Kesehatan',
+    experience: '8 tahun',
+    bio: 'Spesialis konseling perubahan perilaku dengan pendekatan psikologis yang empatik untuk membantu pasien mengatasi ketergantungan nikotin.',
+    initial: 'C',
+    color: 'from-yellow-100 to-recovery-green/5',
+    badges: ['Konselor Bersertifikat', 'CBT Trained', 'IDI Member'],
+  },
+];
+
+const certifications = [
+  { name: 'IDI', full: 'Ikatan Dokter Indonesia' },
+  { name: 'PDPI', full: 'Perhimpunan Dokter Paru Indonesia' },
+  { name: 'KKI', full: 'Konsil Kedokteran Indonesia' },
+  { name: 'WHO', full: 'WHO Cessation Program' },
+  { name: 'BPJS', full: 'Provider BPJS Kesehatan' },
+  { name: 'Kemenkes', full: 'Kementerian Kesehatan RI' },
+];
+
+const values = [
+  {
+    icon: '💚',
+    title: 'Empati',
+    desc: 'Kami mendengarkan tanpa menghakimi. Setiap perjalanan berhenti merokok adalah unik, dan kami hormati setiap langkah Anda.',
+  },
+  {
+    icon: '🔬',
+    title: 'Berbasis Ilmu',
+    desc: 'Setiap rekomendasi didasarkan pada bukti ilmiah dan riset terkini dalam bidang kesehatan paru dan ketergantungan nikotin.',
+  },
+  {
+    icon: '🤝',
+    title: 'Transparan',
+    desc: 'Tidak ada biaya tersembunyi. Semua informasi layanan, proses, dan biaya disampaikan dengan jelas dan terbuka.',
+  },
+];
+---
+
+<BaseLayout
+  title="Tentang Kami"
+  description="Kenali tim dokter ahli spesialis paru dan konsultan berhenti merokok kami. Pengalaman 15+ tahun dengan pendekatan medis yang empatik dan berbasis bukti."
+>
+  <!-- Hero -->
+  <section class="section-pad-sm bg-clean-cloud border-b border-clean-cloud-dark">
+    <div class="container-main text-center">
+      <span class="section-label reveal">Tentang Kami</span>
+      <h1 class="font-lora font-semibold text-medical-trust leading-tight mb-4 reveal"
+          style="font-size: clamp(30px, 4vw, 44px);" data-delay="100">
+        Kredibilitas di Balik Layanan Kami
+      </h1>
+      <p class="font-opensans text-text-muted text-lead max-w-xl mx-auto reveal" data-delay="200">
+        Tim dokter ahli dengan pengalaman puluhan tahun menangani pasien yang ingin berhenti merokok secara permanen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section class="section-pad bg-white">
+    <div class="container-main">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            icon: '🎯',
+            title: 'Visi Kami',
+            desc: 'Menjadikan Indonesia bebas dari ketergantungan rokok melalui edukasi dan layanan medis berkualitas yang dapat diakses oleh seluruh lapisan masyarakat.',
+            color: 'border-medical-trust/20 bg-medical-trust/5',
+          },
+          {
+            icon: '🚀',
+            title: 'Misi Kami',
+            desc: 'Memberikan akses konsultasi kesehatan berhenti merokok yang terjangkau, empatik, dan berbasis bukti medis kepada seluruh masyarakat Indonesia.',
+            color: 'border-recovery-green/20 bg-recovery-green/5',
+          },
+        ].map((item, i) => (
+          <div class={`border-2 ${item.color} rounded-2xl p-10 reveal`} data-delay={String(i * 150)}>
+            <div class="w-14 h-14 rounded-2xl bg-white shadow-card flex items-center justify-center text-3xl mb-6">
+              {item.icon}
+            </div>
+            <h2 class="font-nunito font-bold text-medical-trust text-2xl mb-4">{item.title}</h2>
+            <p class="font-opensans text-text-muted text-body leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor Profiles -->
+  <section class="section-pad bg-clean-cloud" id="tim-dokter">
+    <div class="container-main">
+      <div class="text-center mb-12">
+        <span class="section-label reveal">Tim Medis</span>
+        <h2 class="section-title text-h2 reveal" data-delay="100">Tim Dokter Berpengalaman</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {doctors.map((doc, i) => (
+          <div class={`card-base overflow-hidden reveal`} data-delay={String(i * 150)}>
+            <!-- Photo area -->
+            <div class={`h-56 bg-gradient-to-br ${doc.color} flex items-center justify-center`}>
+              <div class="w-24 h-24 rounded-full bg-white shadow-card-hover flex items-center justify-center
+                          font-nunito font-bold text-medical-trust text-4xl">
+                {doc.initial}
+              </div>
+            </div>
+            <!-- Info -->
+            <div class="p-6">
+              <h3 class="font-nunito font-bold text-medical-trust text-xl mb-1">{doc.name}</h3>
+              <p class="font-opensans text-medical-trust-light text-sm font-semibold mb-3">{doc.title}</p>
+              <p class="font-opensans text-text-muted text-sm leading-relaxed mb-4">{doc.bio}</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                {doc.badges.map(badge => (
+                  <span class="badge-pill bg-medical-trust/8 text-medical-trust text-[11px]"
+                        style="background-color: rgba(30,58,138,0.08);">{badge}</span>
+                ))}
+              </div>
+              <span class="badge-pill bg-recovery-green/10 text-recovery-green-dark">{doc.experience} pengalaman</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section-pad bg-white" id="sertifikasi">
+    <div class="container-main">
+      <div class="text-center mb-12">
+        <h2 class="section-title text-h2 mb-3 reveal">Diakui oleh Institusi Medis Indonesia</h2>
+        <p class="section-subtitle text-lead max-w-lg mx-auto reveal" data-delay="100">
+          Layanan kami tersertifikasi dan diakui oleh berbagai lembaga kesehatan terpercaya.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        {certifications.map((cert, i) => (
+          <div class={`bg-clean-cloud border border-clean-cloud-dark rounded-2xl p-6 text-center
+                        hover:shadow-card-hover hover:border-medical-trust/30 hover:scale-105
+                        transition-all duration-300 cursor-default reveal`}
+               data-delay={String(i * 80)}>
+            <div class="font-nunito font-bold text-medical-trust text-xl mb-2">{cert.name}</div>
+            <div class="font-opensans text-text-muted text-xs leading-tight">{cert.full}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section-pad bg-medical-trust">
+    <div class="container-main">
+      <div class="text-center mb-12">
+        <h2 class="font-nunito font-bold text-white leading-tight mb-3 reveal"
+            style="font-size: clamp(26px, 3.5vw, 36px);">
+          Nilai-Nilai yang Kami Pegang
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {values.map((v, i) => (
+          <div class={`bg-white/10 border border-white/20 rounded-2xl p-8 text-center reveal`}
+               data-delay={String(i * 150)}>
+            <div class="w-16 h-16 rounded-2xl bg-recovery-green/20 flex items-center justify-center
+                         text-3xl mx-auto mb-5">
+              {v.icon}
+            </div>
+            <h3 class="font-nunito font-bold text-white text-xl mb-3">{v.title}</h3>
+            <p class="font-opensans text-white/75 text-sm leading-relaxed">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-pad-sm bg-clean-cloud border-t border-clean-cloud-dark">
+    <div class="container-main text-center">
+      <h2 class="font-nunito font-bold text-medical-trust text-2xl mb-4 reveal">
+        Siap Memulai Bersama Kami?
+      </h2>
+      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary reveal" data-delay="100">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.549 4.103 1.508 5.831L.057 23.48a.496.496 0 00.6.6l5.748-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.813 9.813 0 01-5.001-1.374l-.359-.213-3.717.975.992-3.617-.234-.371A9.816 9.816 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+        Konsultasi Gratis Sekarang
+      </a>
+    </div>
+  </section>
+</BaseLayout>

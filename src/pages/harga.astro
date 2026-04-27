@@ -1,0 +1,256 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import { WA_LINK } from '../utils/whatsapp';
+
+const packages = [
+  {
+    id: 'gratis-dasar',
+    title: 'Paket Gratis Dasar',
+    price: 'Rp 0',
+    period: 'Seumur Hidup Gratis',
+    badge: 'Mulai di Sini',
+    badgeColor: 'bg-clean-cloud-dark text-medical-trust',
+    highlight: false,
+    features: [
+      { text: 'Konsultasi online via WhatsApp', included: true },
+      { text: '2x pertemuan langsung di klinik', included: true },
+      { text: 'Pemeriksaan paru dasar', included: true },
+      { text: 'Rencana berhenti merokok personal', included: true },
+      { text: 'Akses grup support komunitas', included: false },
+      { text: 'Sesi follow-up bulanan', included: false },
+      { text: 'Monitoring perkembangan digital', included: false },
+    ],
+    cta: 'Daftar Gratis Sekarang',
+    href: WA_LINK,
+    external: true,
+  },
+  {
+    id: 'konsultasi-lanjutan',
+    title: 'Paket Konsultasi Lanjutan',
+    price: 'Rp 150.000',
+    period: 'per sesi (1 jam)',
+    badge: 'Paling Populer',
+    badgeColor: 'bg-recovery-green text-white',
+    highlight: true,
+    features: [
+      { text: 'Semua fitur Paket Gratis', included: true },
+      { text: 'Sesi konsultasi lanjutan 1 jam', included: true },
+      { text: 'Akses grup support komunitas', included: true },
+      { text: 'Panduan nutrisi & gaya hidup', included: true },
+      { text: 'Rekam medis digital', included: true },
+      { text: 'Sesi follow-up bulanan', included: false },
+      { text: 'Monitoring perkembangan digital', included: false },
+    ],
+    cta: 'Pilih Paket Ini',
+    href: WA_LINK,
+    external: true,
+  },
+  {
+    id: 'program-lengkap',
+    title: 'Program Lengkap 3 Bulan',
+    price: 'Rp 750.000',
+    period: 'program 12 minggu',
+    badge: 'Hasil Terbaik',
+    badgeColor: 'bg-medical-trust text-white',
+    highlight: false,
+    features: [
+      { text: 'Semua fitur Konsultasi Lanjutan', included: true },
+      { text: 'Sesi konsultasi tidak terbatas', included: true },
+      { text: 'Sesi follow-up bulanan terstruktur', included: true },
+      { text: 'Monitoring perkembangan digital', included: true },
+      { text: 'Laporan kesehatan bulanan', included: true },
+      { text: 'Konseling psikologis (jika perlu)', included: true },
+      { text: 'Garansi dukungan 6 bulan', included: true },
+    ],
+    cta: 'Mulai Program Lengkap',
+    href: WA_LINK,
+    external: true,
+  },
+];
+
+const comparison = [
+  { feature: 'Konsultasi Online WhatsApp', gratis: true, lanjutan: true, lengkap: true },
+  { feature: 'Pertemuan Langsung', gratis: '2x Gratis', lanjutan: '2x Gratis + Lanjutan', lengkap: 'Tidak Terbatas' },
+  { feature: 'Pemeriksaan Paru Dasar', gratis: true, lanjutan: true, lengkap: true },
+  { feature: 'Rencana Personal', gratis: true, lanjutan: true, lengkap: true },
+  { feature: 'Grup Support Komunitas', gratis: false, lanjutan: true, lengkap: true },
+  { feature: 'Follow-up Bulanan', gratis: false, lanjutan: false, lengkap: true },
+  { feature: 'Monitoring Digital', gratis: false, lanjutan: false, lengkap: true },
+  { feature: 'Konseling Psikologis', gratis: false, lanjutan: false, lengkap: true },
+];
+---
+
+<BaseLayout
+  title="Harga"
+  description="Layanan konsultasi berhenti merokok gratis dan terjangkau. Paket gratis, konsultasi lanjutan Rp150.000/sesi, program lengkap 3 bulan. Transparan tanpa biaya tersembunyi."
+>
+  <!-- Hero -->
+  <section class="section-pad-sm bg-clean-cloud border-b border-clean-cloud-dark">
+    <div class="container-main text-center">
+      <span class="section-label reveal">Harga Transparan</span>
+      <h1 class="font-lora font-semibold text-medical-trust leading-tight mb-4 reveal"
+          style="font-size: clamp(28px, 4vw, 44px);" data-delay="100">
+        Terjangkau, Transparan, Tanpa Biaya Tersembunyi
+      </h1>
+      <p class="font-opensans text-text-muted text-lead max-w-xl mx-auto reveal" data-delay="200">
+        Mulai gratis, bayar hanya jika Anda ingin layanan lebih lanjut. Keputusan ada di tangan Anda.
+      </p>
+    </div>
+  </section>
+
+  <!-- Free vs Paid Banner -->
+  <section class="bg-medical-trust py-8">
+    <div class="container-main">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white/10 border border-white/20 rounded-2xl p-6 text-center reveal">
+          <div class="text-4xl mb-3">🎁</div>
+          <h2 class="font-nunito font-bold text-white text-xl mb-2">Yang Selalu Gratis</h2>
+          <ul class="space-y-1.5">
+            {['Konsultasi Online via WhatsApp', '2x Pertemuan Langsung di Klinik', 'Pemeriksaan Paru Dasar', 'Rencana Berhenti Merokok Personal'].map(f => (
+              <li class="flex items-center justify-center gap-2 font-opensans text-white/80 text-sm">
+                <svg class="w-4 h-4 text-recovery-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-recovery-green/20 border border-recovery-green/30 rounded-2xl p-6 text-center reveal" data-delay="150">
+          <div class="text-4xl mb-3">⭐</div>
+          <h2 class="font-nunito font-bold text-white text-xl mb-2">Layanan Berbayar (Opsional)</h2>
+          <ul class="space-y-1.5">
+            {['Sesi Konsultasi Lanjutan', 'Akses Grup Support Komunitas', 'Follow-up & Monitoring Digital', 'Program 3 Bulan Komprehensif'].map(f => (
+              <li class="flex items-center justify-center gap-2 font-opensans text-white/80 text-sm">
+                <svg class="w-4 h-4 text-recovery-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Cards -->
+  <section class="section-pad bg-white" id="paket">
+    <div class="container-main">
+      <div class="text-center mb-12">
+        <h2 class="section-title text-h2 mb-3 reveal">Pilih Paket yang Tepat untuk Anda</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {packages.map((pkg, i) => (
+          <div class={`relative rounded-3xl border-2 overflow-hidden reveal ${pkg.highlight
+            ? 'border-recovery-green shadow-cta-lg scale-[1.02]'
+            : 'border-clean-cloud-dark'}`}
+               data-delay={String(i * 150)}>
+
+            {pkg.highlight && (
+              <div class="absolute top-0 left-0 right-0 bg-recovery-green text-white text-center py-2 font-nunito font-bold text-xs uppercase tracking-wide">
+                ✦ Paling Direkomendasikan ✦
+              </div>
+            )}
+
+            <div class={`p-8 ${pkg.highlight ? 'pt-12' : ''}`}>
+              <!-- Badge -->
+              <span class={`badge-pill ${pkg.badgeColor} mb-4 inline-block`}>{pkg.badge}</span>
+
+              <!-- Title & Price -->
+              <h3 class="font-nunito font-bold text-medical-trust text-xl mb-3">{pkg.title}</h3>
+              <div class="mb-6">
+                <span class="font-nunito font-bold text-medical-trust text-4xl">{pkg.price}</span>
+                <p class="font-opensans text-text-muted text-sm mt-1">{pkg.period}</p>
+              </div>
+
+              <!-- Features -->
+              <ul class="space-y-3 mb-8" role="list">
+                {pkg.features.map(f => (
+                  <li class="flex items-start gap-3">
+                    {f.included ? (
+                      <svg class="w-5 h-5 text-recovery-green mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                      </svg>
+                    ) : (
+                      <svg class="w-5 h-5 text-clean-cloud-dark mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                      </svg>
+                    )}
+                    <span class={`font-opensans text-sm ${f.included ? 'text-text-body' : 'text-text-light'}`}>
+                      {f.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <!-- CTA -->
+              <a href={pkg.href} target={pkg.external ? '_blank' : '_self'} rel={pkg.external ? 'noopener noreferrer' : ''}
+                 class={pkg.highlight ? 'btn-primary w-full justify-center' : 'btn-secondary w-full justify-center'}>
+                {pkg.cta}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section-pad bg-clean-cloud">
+    <div class="container-main">
+      <div class="text-center mb-12">
+        <h2 class="section-title text-h2 mb-3 reveal">Perbandingan Lengkap</h2>
+      </div>
+      <div class="overflow-x-auto reveal">
+        <table class="w-full min-w-[600px]" role="table">
+          <thead>
+            <tr class="border-b-2 border-clean-cloud-dark">
+              <th class="text-left font-nunito font-bold text-medical-trust text-sm py-4 pr-6">Fitur</th>
+              {['Gratis', 'Lanjutan', 'Lengkap'].map(h => (
+                <th class="text-center font-nunito font-bold text-medical-trust text-sm py-4 px-4 min-w-[120px]">{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map((row, i) => (
+              <tr class={`border-b border-clean-cloud-dark ${i % 2 === 0 ? 'bg-white' : 'bg-clean-cloud'}`}>
+                <td class="font-opensans text-text-body text-sm py-4 pr-6">{row.feature}</td>
+                {[row.gratis, row.lanjutan, row.lengkap].map(val => (
+                  <td class="text-center py-4 px-4">
+                    {val === true ? (
+                      <svg class="w-5 h-5 text-recovery-green mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                      </svg>
+                    ) : val === false ? (
+                      <svg class="w-4 h-4 text-clean-cloud-dark mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                      </svg>
+                    ) : (
+                      <span class="font-opensans text-xs text-medical-trust font-medium">{val}</span>
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer & CTA -->
+  <section class="section-pad-sm bg-white border-t border-clean-cloud-dark">
+    <div class="container-main max-w-2xl mx-auto text-center">
+      <div class="bg-recovery-green/5 border border-recovery-green/20 rounded-2xl p-6 mb-8 reveal">
+        <p class="font-opensans text-text-muted text-sm leading-relaxed">
+          <strong class="text-medical-trust">💡 Transparansi Harga:</strong> Harga yang tercantum adalah harga final tanpa biaya tambahan tersembunyi. Pembayaran hanya diperlukan untuk layanan opsional di luar paket gratis. Kami berkomitmen pada transparansi penuh.
+        </p>
+      </div>
+      <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary reveal" data-delay="100">
+        Mulai dengan Paket Gratis Sekarang →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

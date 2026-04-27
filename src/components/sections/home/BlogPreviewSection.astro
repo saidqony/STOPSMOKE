@@ -1,0 +1,107 @@
+---
+const articles = [
+  {
+    slug: 'tips-berhenti-merokok-tanpa-tersiksa',
+    category: 'Tips',
+    categoryColor: 'bg-recovery-green/10 text-recovery-green-dark',
+    title: '5 Tips Berhenti Merokok Tanpa Tersiksa yang Terbukti Efektif',
+    excerpt: 'Berhenti merokok tidak harus menyakitkan. Dengan strategi yang tepat dan dukungan medis, banyak orang berhasil berhenti tanpa penderitaan berlebihan.',
+    readTime: 5,
+    date: '20 April 2026',
+    bgColor: 'from-recovery-green/20 to-medical-trust/10',
+    icon: '💡',
+  },
+  {
+    slug: 'dampak-merokok-pada-paru-paru',
+    category: 'Edukasi',
+    categoryColor: 'bg-medical-trust/10 text-medical-trust',
+    title: 'Apa yang Terjadi pada Paru-paru Setelah Anda Berhenti Merokok?',
+    excerpt: 'Dalam 20 menit pertama berhenti merokok, tubuh Anda sudah mulai pulih. Pelajari perjalanan luar biasa pemulihan paru-paru dari perspektif medis.',
+    readTime: 7,
+    date: '15 April 2026',
+    bgColor: 'from-medical-trust/20 to-recovery-green/5',
+    icon: '🫁',
+  },
+  {
+    slug: 'cerita-sukses-pak-budi',
+    category: 'Cerita Sukses',
+    categoryColor: 'bg-yellow-100 text-yellow-700',
+    title: 'Dari 2 Bungkus Per Hari ke Bebas Total: Kisah Pak Budi',
+    excerpt: 'Pak Budi merokok 2 bungkus sehari selama 30 tahun. Dengan program berhenti merokok bersama tim dokter kami, ia kini sudah 6 bulan bebas rokok.',
+    readTime: 4,
+    date: '10 April 2026',
+    bgColor: 'from-yellow-100 to-orange-50',
+    icon: '🏆',
+  },
+];
+---
+
+<section class="section-pad bg-clean-cloud" aria-labelledby="blog-heading">
+  <div class="container-main">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+      <div>
+        <span class="section-label reveal">Edukasi Kesehatan</span>
+        <h2 id="blog-heading" class="font-lora font-semibold text-medical-trust leading-tight reveal"
+            style="font-size: clamp(26px, 3.5vw, 36px);" data-delay="100">
+          Wawasan untuk Perjalanan Anda
+        </h2>
+      </div>
+      <a href="/blog"
+         class="inline-flex items-center gap-2 font-nunito font-semibold text-recovery-green text-sm
+                hover:gap-3 transition-all duration-200 shrink-0 reveal"
+         data-delay="150">
+        Lihat Semua Artikel
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {articles.map((art, i) => (
+        <article class={`card-base overflow-hidden reveal group`} data-delay={String(i * 120)}>
+          <!-- Thumbnail -->
+          <a href={`/blog/${art.slug}`} class="block overflow-hidden" aria-label={art.title}>
+            <div class={`h-48 bg-gradient-to-br ${art.bgColor} flex items-center justify-center
+                         group-hover:scale-105 transition-transform duration-500 relative`}>
+              <span class="text-6xl">{art.icon}</span>
+              <!-- Category overlay -->
+              <div class="absolute top-4 left-4">
+                <span class={`badge-pill ${art.categoryColor}`}>{art.category}</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Content -->
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-3 text-xs text-text-light font-opensans">
+              <span>{art.date}</span>
+              <span>•</span>
+              <span>{art.readTime} menit baca</span>
+            </div>
+
+            <h3 class="font-nunito font-bold text-medical-trust text-lg leading-snug mb-3
+                       line-clamp-2 group-hover:text-recovery-green transition-colors">
+              <a href={`/blog/${art.slug}`}>{art.title}</a>
+            </h3>
+
+            <p class="font-opensans text-text-muted text-sm leading-relaxed line-clamp-3 mb-4">
+              {art.excerpt}
+            </p>
+
+            <a href={`/blog/${art.slug}`}
+               class="inline-flex items-center gap-1.5 font-opensans font-semibold text-recovery-green text-caption
+                      hover:gap-2.5 transition-all duration-200">
+              Baca Selengkapnya
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   GOOGLE FONTS IMPORT
+   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Open+Sans:wght@400;500;600&family=Lato:wght@300;400;700&display=swap');
+
+/* =============================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ============================================= */
+:root {
+  --color-clean-cloud: #F8FAFC;
+  --color-clean-cloud-dark: #E2E8F0;
+  --color-medical-trust: #1E3A8A;
+  --color-medical-trust-light: #3B82F6;
+  --color-medical-trust-dark: #0F172A;
+  --color-recovery-green: #10B981;
+  --color-recovery-green-dark: #059669;
+  --color-recovery-green-light: #34D399;
+  --color-text-body: #334155;
+  --color-text-muted: #475569;
+  --color-text-light: #64748B;
+
+  --font-nunito: 'Nunito', sans-serif;
+  --font-lora: 'Lora', serif;
+  --font-opensans: 'Open Sans', sans-serif;
+  --font-lato: 'Lato', sans-serif;
+
+  --container-max: 1200px;
+  --container-px: 1rem;
+}
+
+@screen md {
+  :root { --container-px: 1.5rem; }
+}
+
+@screen lg {
+  :root { --container-px: 2rem; }
+}
+
+/* =============================================
+   BASE STYLES
+   ============================================= */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-opensans);
+  background-color: var(--color-clean-cloud);
+  color: var(--color-text-body);
+  line-height: 1.7;
+}
+
+/* =============================================
+   COMPONENT CLASSES
+   ============================================= */
+@layer components {
+  /* Container */
+  .container-main {
+    @apply max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  /* Section padding */
+  .section-pad {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  .section-pad-sm {
+    @apply py-10 md:py-14 lg:py-16;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-recovery-green text-white font-nunito font-bold text-base
+           px-8 py-4 rounded-xl shadow-cta transition-all duration-300
+           hover:bg-recovery-green-dark hover:shadow-cta-lg hover:scale-[1.02]
+           active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-recovery-green focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-transparent text-medical-trust font-nunito font-bold text-base
+           px-7 py-[14px] rounded-xl border-2 border-medical-trust transition-all duration-300
+           hover:bg-medical-trust hover:text-white
+           focus:outline-none focus:ring-2 focus:ring-medical-trust focus:ring-offset-2;
+  }
+  .btn-white {
+    @apply inline-flex items-center gap-2 bg-white text-medical-trust font-nunito font-bold text-base
+           px-8 py-4 rounded-xl shadow-cta transition-all duration-300
+           hover:bg-clean-cloud hover:scale-[1.02]
+           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  }
+
+  /* Section Header */
+  .section-label {
+    @apply inline-block bg-recovery-green text-white font-nunito font-bold text-xs
+           px-4 py-1.5 rounded-full uppercase tracking-wide mb-4;
+  }
+  .section-title {
+    @apply font-lora font-semibold text-medical-trust leading-tight;
+  }
+  .section-subtitle {
+    @apply font-opensans text-text-muted leading-relaxed;
+  }
+
+  /* Cards */
+  .card-base {
+    @apply bg-white rounded-2xl border border-clean-cloud-dark shadow-card
+           transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  /* Badge */
+  .badge-pill {
+    @apply inline-block text-xs font-nunito font-bold px-3 py-1 rounded-full;
+  }
+
+  /* Scroll Reveal */
+  .reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  .reveal.is-visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* =============================================
+   SCROLLBAR STYLING
+   ============================================= */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-clean-cloud-dark); }
+::-webkit-scrollbar-thumb { background: var(--color-medical-trust-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-medical-trust); }
+
+/* =============================================
+   SELECTION COLOR
+   ============================================= */
+::selection {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: var(--color-medical-trust-dark);
+}
+
+/* =============================================
+   DOTS GRID BACKGROUND PATTERN
+   ============================================= */
+.bg-dots {
+  background-image: radial-gradient(circle, #E2E8F0 1px, transparent 1px);
+  background-size: 24px 24px;
+}

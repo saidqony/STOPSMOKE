@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import HeroSection from '../components/sections/home/HeroSection.astro';
+import ValuePropSection from '../components/sections/home/ValuePropSection.astro';
+import DoctorSection from '../components/sections/home/DoctorSection.astro';
+import TestimonialSection from '../components/sections/home/TestimonialSection.astro';
+import BlogPreviewSection from '../components/sections/home/BlogPreviewSection.astro';
+import BottomCTASection from '../components/sections/home/BottomCTASection.astro';
+---
+
+<BaseLayout
+  title="Beranda"
+  description="Konsultasi gratis dengan dokter ahli untuk berhenti merokok. Dua kali pertemuan langsung gratis. Mulai perjalanan hidup sehat Anda hari ini — tanpa biaya, tanpa syarat."
+>
+  <HeroSection />
+  <ValuePropSection />
+  <DoctorSection />
+  <TestimonialSection />
+  <BlogPreviewSection />
+  <BottomCTASection />
+</BaseLayout>

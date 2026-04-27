@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pulse-soft {
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1b21",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#faf8ff",
+                        "inverse-on-surface": "#f1f0f7",
+                        "surface-bright": "#faf8ff",
+                        "recovery-green-light": "#34D399",
+                        "surface-variant": "#e3e1e9",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-tertiary-fixed": "#341100",
+                        "outline": "#757682",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e3e1e9",
+                        "surface-container": "#eeedf4",
+                        "primary": "#00236f",
+                        "secondary-fixed-dim": "#4edea3",
+                        "primary-container": "#1e3a8a",
+                        "clean-cloud-dark": "#E2E8F0",
+                        "tertiary": "#4b1c00",
+                        "clean-cloud": "#F8FAFC",
+                        "secondary": "#006c49",
+                        "on-surface-variant": "#444651",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1b21",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "on-secondary-fixed": "#002113",
+                        "on-secondary-container": "#00714d",
+                        "surface-tint": "#4059aa",
+                        "outline-variant": "#c5c5d3",
+                        "surface-container-high": "#e9e7ef",
+                        "inverse-surface": "#2f3036",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-dim": "#dad9e1",
+                        "on-error": "#ffffff",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#f39461",
+                        "surface-card": "#FFFFFF",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "on-primary-fixed": "#00164e",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#6cf8bb",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f4f3fa",
+                        "medical-trust-light": "#3B82F6",
+                        "text-primary": "#1E3A8A",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-error-container": "#93000a",
+                        "medical-trust-dark": "#0F172A",
+                        "text-body": "#334155",
+                        "text-muted": "#64748B",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-container": "#90a8ff",
+                        "recovery-green-dark": "#059669",
+                        "tertiary-container": "#6e2c00",
+                        "on-primary-fixed-variant": "#264191"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "4xl": "80px",
+                        "sm": "8px",
+                        "3xl": "64px",
+                        "5xl": "100px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "h3-card": ["Plus Jakarta Sans"],
+                        "body-standard": ["Noto Serif"],
+                        "h2-section": ["Plus Jakarta Sans"],
+                        "h1-hero": ["Plus Jakarta Sans"],
+                        "label-ui": ["Plus Jakarta Sans"],
+                        "quote": ["Newsreader"],
+                        "h1-medical": ["Newsreader"],
+                        "body-lead": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "h3-card": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-standard": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "h2-section": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "h1-hero": ["52px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-ui": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "quote": ["22px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "h1-medical": ["48px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lead": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md docked sticky top-0 w-full z-50 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+<div class="text-2xl font-serif font-bold text-blue-900 dark:text-blue-400">
+                StopSmoking MD
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-ui text-label-ui text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 hover:text-emerald-500 transition-all duration-300" href="#">Programs</a>
+<a class="font-label-ui text-label-ui text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 hover:text-emerald-500 transition-all duration-300" href="#">Specialists</a>
+<a class="font-label-ui text-label-ui text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 hover:text-emerald-500 transition-all duration-300" href="#">Success Stories</a>
+<a class="font-label-ui text-label-ui text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-200 hover:text-emerald-500 transition-all duration-300" href="#">Clinics</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="scale-95 active:scale-90 transition-transform px-6 py-3 bg-secondary text-on-primary rounded-xl font-label-ui text-label-ui flex items-center gap-2 pulse-soft">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                    WhatsApp Consultation
+                </button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="py-5xl px-8 relative overflow-hidden bg-clean-cloud">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<div class="w-full h-full bg-gradient-to-l from-primary to-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-ui text-label-ui mb-lg">
+                    Hubungi Kami
+                </span>
+<h1 class="font-h1-medical text-h1-medical text-text-primary mb-md">Kami Siap Mendengarkan</h1>
+<p class="font-body-lead text-body-lead text-text-muted max-w-2xl mx-auto">
+                    Perjalanan Anda menuju kesehatan paru-paru dimulai dengan satu langkah kecil. Tim medis kami siap membantu Anda di setiap tahap pemulihan.
+                </p>
+</div>
+</section>
+<!-- Main Contact Canvas -->
+<section class="py-5xl px-8">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Left: WhatsApp & Direct Contact -->
+<div class="lg:col-span-5 space-y-lg">
+<div class="bg-surface-card p-xl rounded-xl shadow-sm border border-clean-cloud-dark hover:shadow-md transition-all group">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[32px]" data-weight="fill">chat_bubble</span>
+</div>
+<div>
+<h3 class="font-h3-card text-h3-card text-text-primary">WhatsApp Langsung</h3>
+<p class="font-label-ui text-label-ui text-text-muted">Respon cepat dalam 15 menit</p>
+</div>
+</div>
+<p class="font-body-standard text-body-standard text-text-body mb-xl">
+                            Konsultasi awal gratis melalui WhatsApp untuk mendiskusikan program berhenti merokok yang tepat bagi Anda.
+                        </p>
+<a class="w-full py-4 bg-secondary text-on-primary rounded-xl font-label-ui text-label-ui flex items-center justify-center gap-3 transition-transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-secondary/20" href="#">
+<span class="material-symbols-outlined">call</span>
+                            Hubungi via WhatsApp Sekarang
+                        </a>
+<div class="mt-xl pt-xl border-t border-clean-cloud-dark">
+<div class="flex items-center gap-md text-text-body mb-md">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+<span class="font-label-ui text-label-ui">Jam Operasional: 08:00 - 20:00 (Sen - Sab)</span>
+</div>
+<div class="flex items-center gap-md text-text-body">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<span class="font-label-ui text-label-ui">Klinis Terakreditasi &amp; Rahasia</span>
+</div>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-xl rounded-xl shadow-lg relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-h3-card text-h3-card text-white mb-md">Bantuan Darurat?</h4>
+<p class="font-body-standard text-body-standard text-primary-fixed-dim mb-lg opacity-80">
+                                Jika Anda memerlukan bantuan medis segera terkait pernapasan, hubungi nomor darurat klinik kami.
+                            </p>
+<div class="text-3xl font-bold font-h1-hero text-white tracking-wider">
+                                (021) 555-0199
+                            </div>
+</div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+</div>
+</div>
+<!-- Right: Contact Form -->
+<div class="lg:col-span-7">
+<div class="bg-surface-card p-xl rounded-xl shadow-sm border border-clean-cloud-dark">
+<h2 class="font-h2-section text-h2-section text-text-primary mb-xl">Kirim Pesan</h2>
+<form class="space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="font-label-ui text-label-ui text-text-primary block">Nama Lengkap</label>
+<input class="w-full bg-clean-cloud border-clean-cloud-dark rounded-xl py-4 px-md focus:ring-2 focus:ring-medical-trust-light outline-none transition-all font-label-ui" placeholder="Contoh: Budi Santoso" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-ui text-label-ui text-text-primary block">Email Aktif</label>
+<input class="w-full bg-clean-cloud border-clean-cloud-dark rounded-xl py-4 px-md focus:ring-2 focus:ring-medical-trust-light outline-none transition-all font-label-ui" placeholder="email@domain.com" type="email"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-ui text-label-ui text-text-primary block">Nomor WhatsApp</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 font-label-ui text-text-muted">+62</span>
+<input class="w-full bg-clean-cloud border-clean-cloud-dark rounded-xl py-4 pl-[56px] pr-md focus:ring-2 focus:ring-medical-trust-light outline-none transition-all font-label-ui" placeholder="812 XXXX XXXX" type="tel"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-ui text-label-ui text-text-primary block">Pesan atau Keluhan</label>
+<textarea class="w-full bg-clean-cloud border-clean-cloud-dark rounded-xl py-4 px-md focus:ring-2 focus:ring-medical-trust-light outline-none transition-all font-label-ui" placeholder="Tuliskan pertanyaan atau kendala yang Anda alami..." rows="5"></textarea>
+</div>
+<button class="w-full md:w-auto px-12 py-4 bg-primary text-on-primary rounded-xl font-label-ui text-label-ui transition-all hover:shadow-xl hover:translate-y-[-2px] active:translate-y-[0px]" type="submit">
+                                Kirim Formulir
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Map & Info Section -->
+<section class="py-5xl px-8 bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-5xl items-center">
+<div class="order-2 lg:order-1">
+<div class="rounded-2xl overflow-hidden shadow-2xl aspect-video border-8 border-white">
+<img class="w-full h-full object-cover" data-alt="Modern medical office map interface showing city clinic location with clean minimalist UI markers and soft professional lighting" data-location="Jakarta, Indonesia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCkpKA9eMdWO-y2jrotDT_m5EyOVroQSSMYjND_ZQFgXbA_tmGdn7qZ76Dt2mmamyynoNQUuP47C3kMl06_lzwqt_jUhoLtGHAf_USUKDTDcepmi_iO0AmpHRmst0FpjBGubpCQW0c5p15QxIfI3s9_uDqgJKWAEfDfBz1M3n_ud8LMvS5rspMxQRJLZV4b-2OHJCnksW8s-cquDEilzG9UQmyhkw76xSXvXzO4NKb1yj7nzc9Q_D3a8nyW1dl4GooPIumn-5jzKA"/>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-xl">
+<h2 class="font-h2-section text-h2-section text-text-primary">Kunjungi Klinik Kami</h2>
+<p class="font-body-lead text-body-lead text-text-body">
+                            Fasilitas kami dirancang untuk kenyamanan dan privasi Anda. Berada di pusat medis strategis dengan akses mudah.
+                        </p>
+<div class="space-y-lg">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h5 class="font-label-ui text-label-ui text-text-primary">Alamat Utama</h5>
+<p class="font-body-standard text-body-standard text-text-muted">Jl. Kesehatan No. 42, Kebayoran Baru, Jakarta Selatan, 12150</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h5 class="font-label-ui text-label-ui text-text-primary">Email Korespondensi</h5>
+<p class="font-body-standard text-body-standard text-text-muted">care@stopsmokingmd.com</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-lg rounded-xl border border-clean-cloud-dark flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="w-3 h-3 rounded-full bg-recovery-green-light"></span>
+<span class="font-label-ui text-label-ui text-text-primary">Status: Sedang Beroperasi</span>
+</div>
+<a class="text-secondary font-label-ui text-label-ui flex items-center gap-1 hover:underline" href="#">
+                                Lihat Rute di Peta
+                                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Specialized FAQ Preview -->
+<section class="py-5xl px-8">
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-4xl">
+<h2 class="font-h2-section text-h2-section text-text-primary">Pertanyaan Umum</h2>
+</div>
+<div class="space-y-md">
+<div class="border-b border-clean-cloud-dark pb-lg group cursor-pointer">
+<div class="flex justify-between items-center text-text-primary">
+<span class="font-h3-card text-[20px]">Apakah program ini dijamin berhasil?</span>
+<span class="material-symbols-outlined text-secondary">add</span>
+</div>
+</div>
+<div class="border-b border-clean-cloud-dark pb-lg group cursor-pointer">
+<div class="flex justify-between items-center text-text-primary">
+<span class="font-h3-card text-[20px]">Berapa lama durasi pemulihan rata-rata?</span>
+<span class="material-symbols-outlined text-secondary">add</span>
+</div>
+</div>
+<div class="border-b border-clean-cloud-dark pb-lg group cursor-pointer">
+<div class="flex justify-between items-center text-text-primary">
+<span class="font-h3-card text-[20px]">Apakah biaya dapat dicover asuransi?</span>
+<span class="material-symbols-outlined text-secondary">add</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating WhatsApp FAB -->
+<div class="fixed bottom-lg right-lg z-50 group flex items-center gap-md">
+<div class="hidden md:block bg-white px-md py-sm rounded-lg shadow-xl text-text-primary font-label-ui text-label-ui border border-clean-cloud-dark opacity-0 group-hover:opacity-100 transition-opacity translate-x-2 group-hover:translate-x-0">
+            Butuh Bantuan Segera?
+        </div>
+<button class="w-16 h-16 rounded-full bg-secondary text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110 active:scale-95 pulse-soft">
+<span class="material-symbols-outlined text-[32px]" data-weight="fill">chat</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-8 py-16 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-serif font-bold text-blue-900 dark:text-blue-400 text-xl">StopSmoking MD</div>
+<div class="font-sans text-sm text-slate-500 dark:text-slate-400">© 2024 Medical Trust Stop Smoking Clinic. Certified Clinical Care.</div>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 dark:hover:text-blue-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Medical Disclaimer</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 dark:hover:text-blue-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 dark:hover:text-blue-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-sans text-sm text-slate-500 hover:text-blue-900 dark:hover:text-blue-200 hover:underline transition-all opacity-80 hover:opacity-100" href="#">Patient Rights</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -15,7 +15,7 @@ dist
 # Project docs (tidak perlu di-commit ke deploy)
 brain
 design
-
+    
 # OS
 .DS_Store
 Thumbs.db
